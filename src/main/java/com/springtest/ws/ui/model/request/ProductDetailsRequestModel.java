@@ -3,7 +3,7 @@ package com.springtest.ws.ui.model.request;
 public class ProductDetailsRequestModel {
 
     private int proCode;
-    private int proShtCode;
+    private int proShtDesc;
     private String proDesc;
 
     public int getProCode() {
@@ -14,12 +14,12 @@ public class ProductDetailsRequestModel {
         this.proCode = proCode;
     }
 
-    public int getProShtCode() {
-        return proShtCode;
+    public int getProShtDesc() {
+        return proShtDesc;
     }
 
-    public void setProShtCode(int proShtCode) {
-        this.proShtCode = proShtCode;
+    public void setProShtDesc(int proShtDesc) {
+        this.proShtDesc = proShtDesc;
     }
 
     public String getProDesc() {

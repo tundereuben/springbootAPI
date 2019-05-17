@@ -71,7 +71,7 @@ public class SubclassController {
 
     @GetMapping
     public List<SubclassRest> getSubclasses(@RequestParam(value="page", defaultValue = "0") int page,
-                                            @RequestParam(value="limit", defaultValue = "25") int limit) {
+                                            @RequestParam(value="limit", defaultValue = "100") int limit) {
 
         List<SubclassRest> returnValue = new ArrayList<>();
 

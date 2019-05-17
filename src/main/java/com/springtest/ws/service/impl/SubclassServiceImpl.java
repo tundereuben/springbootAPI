@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -74,7 +75,7 @@ public class SubclassServiceImpl implements SubclassService{
     public List<SubclassDto> getSubclasses(int page, int limit) {
         List<SubclassDto> returnValue = new ArrayList<>();
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("sclCode"));
 
         Page<SubclassEntity> subclassesPage = subclassRepository.findAll(pageableRequest);
         List<SubclassEntity> subclasses = subclassesPage.getContent();

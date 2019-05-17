@@ -10,11 +10,13 @@ public class CovertypeEntity implements Serializable {
     private static final long serialVersionUID = 3078592516706220110L;
 
     @Id
+    @Column(nullable = false)
     private  int covtCode;
 
     @Column(nullable = false)
     private String covtShtDesc;
 
+    @Column(nullable = false)
     private String covtDesc;
 
     @Column(nullable = false)

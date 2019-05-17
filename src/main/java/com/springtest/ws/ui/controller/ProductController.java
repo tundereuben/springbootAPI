@@ -72,7 +72,7 @@ public class ProductController {
 
     @GetMapping
     public List<ProductRest> getProducts(@RequestParam(value="page", defaultValue = "0") int page,
-                                            @RequestParam(value="limit", defaultValue = "25") int limit) {
+                                            @RequestParam(value="limit", defaultValue = "100") int limit) {
 
         List<ProductRest> returnValue = new ArrayList<>();
 

@@ -71,7 +71,7 @@ public class SectionController {
 
     @GetMapping
     public List<SectionRest> getSections(@RequestParam(value="page", defaultValue = "0") int page,
-                                             @RequestParam(value="limit", defaultValue = "25") int limit) {
+                                             @RequestParam(value="limit", defaultValue = "500") int limit) {
 
         List<SectionRest> returnValue = new ArrayList<>();
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -54,6 +55,7 @@ public class CovertypeServiceImpl implements CovertypeService {
         covertypeEntity.setCovtCode(covertype.getCovtCode());
         covertypeEntity.setCovtDesc(covertype.getCovtDesc());
         covertypeEntity.setCovtShtDesc(covertype.getCovtShtDesc());
+        covertypeEntity.setCovtDetails(covertype.getCovtDetails());
 
         CovertypeEntity updatedCovertypeDetails = covertypeRepository.save(covertypeEntity);
 
@@ -73,7 +75,7 @@ public class CovertypeServiceImpl implements CovertypeService {
     public List<CovertypeDto> getCovertypes(int page, int limit) {
         List<CovertypeDto> returnValue = new ArrayList<>();
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("covtCode"));
 
         Page<CovertypeEntity> covertypesPage = covertypeRepository.findAll(pageableRequest);
         List<CovertypeEntity> covertypes = covertypesPage.getContent();

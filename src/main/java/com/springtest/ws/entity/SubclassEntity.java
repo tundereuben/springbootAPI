@@ -2,7 +2,6 @@ package com.springtest.ws.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
 
@@ -10,14 +9,15 @@ import java.io.Serializable;
 public class SubclassEntity implements Serializable {
     private static final long serialVersionUID = -6009144140580813555L;
 
-    @Id
-    @GeneratedValue
-    private long id;
+//
+//    @GeneratedValue
+//    private long id;
 
-    @Column(nullable = false, length = 32, unique = true)
+    @Id
+    @Column(nullable = false, unique = true)
     private int sclCode;
 
-    @Column(nullable = false, length = 32)
+    @Column(nullable = false)
     private int sclClaCode;
 
     @Column(nullable = false)
@@ -25,14 +25,7 @@ public class SubclassEntity implements Serializable {
 
     @Column(nullable = false)
     private String sclShtDesc;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+    
 
     public int getSclCode() {
         return sclCode;

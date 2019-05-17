@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class SectionServiceImpl implements SectionService {
     public List<SectionDto> getSections(int page, int limit) {
         List<SectionDto> returnValue = new ArrayList<>();
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("sectCode"));
 
         Page<SectionEntity> sectionsPage = sectionRepository.findAll(pageableRequest);
         List<SectionEntity> sections = sectionsPage.getContent();

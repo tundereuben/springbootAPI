@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class ClauseServiceImpl implements ClauseService {
     public List<ClauseDto> getClauses(int page, int limit) {
         List<ClauseDto> returnValue = new ArrayList<>();
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("clsCode"));
 
         Page<ClauseEntity> clausesPage = clauseRepository.findAll(pageableRequest);
         List<ClauseEntity> clauses = clausesPage.getContent();

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -74,7 +75,7 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDto> getProducts(int page, int limit) {
         List<ProductDto> returnValue = new ArrayList<>();
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("proCode"));
 
         Page<ProductEntity> productsPage = productRepository.findAll(pageableRequest);
         List<ProductEntity> products = productsPage.getContent();
