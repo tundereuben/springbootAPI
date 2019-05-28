@@ -66,9 +66,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteProduct(int proCode) {
         ProductEntity productEntity = productRepository.findByProCode(proCode);
-
         productRepository.delete(productEntity);
-
     }
 
     @Override
