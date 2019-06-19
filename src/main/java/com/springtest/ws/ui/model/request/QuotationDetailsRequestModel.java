@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class QuotationDetailsRequestModel {
 
-    public int quotCode;
-    public int quotNo;
+//    public int quotCode;
+    public String quotNo;
     public int quotClntCode;
     public int quotBrnCode;
     public int quotCurCode;
@@ -34,19 +34,19 @@ public class QuotationDetailsRequestModel {
     public String quotCancelReason;
     public String quotFreqOfPayment;
 
-    public int getQuotCode() {
-        return quotCode;
-    }
+//    public int getQuotCode() {
+//        return quotCode;
+//    }
+//
+//    public void setQuotCode(int quotCode) {
+//        this.quotCode = quotCode;
+//    }
 
-    public void setQuotCode(int quotCode) {
-        this.quotCode = quotCode;
-    }
-
-    public int getQuotNo() {
+    public String getQuotNo() {
         return quotNo;
     }
 
-    public void setQuotNo(int quotNo) {
+    public void setQuotNo(String quotNo) {
         this.quotNo = quotNo;
     }
 

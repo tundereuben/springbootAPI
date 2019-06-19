@@ -6,7 +6,7 @@ import java.util.Date;
 public class QuotationRest {
 
     public int quotCode;
-    public int quotNo;
+    public String quotNo;
     public int quotClntCode;
     public int quotBrnCode;
     public int quotCurCode;
@@ -42,11 +42,11 @@ public class QuotationRest {
         this.quotCode = quotCode;
     }
 
-    public int getQuotNo() {
+    public String getQuotNo() {
         return quotNo;
     }
 
-    public void setQuotNo(int quotNo) {
+    public void setQuotNo(String quotNo) {
         this.quotNo = quotNo;
     }
 

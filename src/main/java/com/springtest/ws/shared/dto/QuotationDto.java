@@ -8,7 +8,7 @@ public class QuotationDto implements Serializable {
     private static final long serialVersionUID = -9193025225396704642L;
 
     public int quotCode;
-    public int quotNo;
+    public String quotNo;
     public int quotClntCode;
     public int quotBrnCode;
     public int quotCurCode;
@@ -44,11 +44,11 @@ public class QuotationDto implements Serializable {
         this.quotCode = quotCode;
     }
 
-    public int getQuotNo() {
+    public String getQuotNo() {
         return quotNo;
     }
 
-    public void setQuotNo(int quotNo) {
+    public void setQuotNo(String quotNo) {
         this.quotNo = quotNo;
     }
 

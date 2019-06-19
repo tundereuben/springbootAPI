@@ -15,7 +15,7 @@ public class QuotationEntity implements Serializable {
     public int quotCode;
 
     @Column(nullable = false)
-    public int quotNo;
+    public String quotNo;
 
     public int quotClntCode;
     public int quotBrnCode;
@@ -52,11 +52,11 @@ public class QuotationEntity implements Serializable {
         this.quotCode = quotCode;
     }
 
-    public int getQuotNo() {
+    public String getQuotNo() {
         return quotNo;
     }
 
-    public void setQuotNo(int quotNo) {
+    public void setQuotNo(String quotNo) {
         this.quotNo = quotNo;
     }
 
