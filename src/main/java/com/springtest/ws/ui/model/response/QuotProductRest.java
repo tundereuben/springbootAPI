@@ -12,17 +12,10 @@ public class QuotProductRest {
     public Date qpWetDate;
     public int qpQuotCode;
     public String qpQuotNo;
-    public int qpQuotRevisionNo;
     public BigDecimal qpTotalSi;
     public BigDecimal qpPremium;
     public BigDecimal qpComm;
-    public String qpRemarks;
-    public BigDecimal qpFap;
-    public String qpStatus;
-    public String qpBinder;
-    public int qpBindCode;
-    public BigDecimal qpSubCommAmt;
-    public String qpConverted;
+//    public int qpAgntCode;
 
     public int getQpCode() {
         return qpCode;
@@ -80,14 +73,6 @@ public class QuotProductRest {
         this.qpQuotNo = qpQuotNo;
     }
 
-    public int getQpQuotRevisionNo() {
-        return qpQuotRevisionNo;
-    }
-
-    public void setQpQuotRevisionNo(int qpQuotRevisionNo) {
-        this.qpQuotRevisionNo = qpQuotRevisionNo;
-    }
-
     public BigDecimal getQpTotalSi() {
         return qpTotalSi;
     }
@@ -112,59 +97,11 @@ public class QuotProductRest {
         this.qpComm = qpComm;
     }
 
-    public String getQpRemarks() {
-        return qpRemarks;
-    }
-
-    public void setQpRemarks(String qpRemarks) {
-        this.qpRemarks = qpRemarks;
-    }
-
-    public BigDecimal getQpFap() {
-        return qpFap;
-    }
-
-    public void setQpFap(BigDecimal qpFap) {
-        this.qpFap = qpFap;
-    }
-
-    public String getQpStatus() {
-        return qpStatus;
-    }
-
-    public void setQpStatus(String qpStatus) {
-        this.qpStatus = qpStatus;
-    }
-
-    public String getQpBinder() {
-        return qpBinder;
-    }
-
-    public void setQpBinder(String qpBinder) {
-        this.qpBinder = qpBinder;
-    }
-
-    public int getQpBindCode() {
-        return qpBindCode;
-    }
-
-    public void setQpBindCode(int qpBindCode) {
-        this.qpBindCode = qpBindCode;
-    }
-
-    public BigDecimal getQpSubCommAmt() {
-        return qpSubCommAmt;
-    }
-
-    public void setQpSubCommAmt(BigDecimal qpSubCommAmt) {
-        this.qpSubCommAmt = qpSubCommAmt;
-    }
-
-    public String getQpConverted() {
-        return qpConverted;
-    }
-
-    public void setQpConverted(String qpConverted) {
-        this.qpConverted = qpConverted;
-    }
+//    public int getQpAgntCode() {
+//        return qpAgntCode;
+//    }
+//
+//    public void setQpAgntCode(int qpAgntCode) {
+//        this.qpAgntCode = qpAgntCode;
+//    }
 }

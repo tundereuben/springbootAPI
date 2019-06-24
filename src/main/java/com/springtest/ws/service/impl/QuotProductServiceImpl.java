@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -48,23 +49,16 @@ public class QuotProductServiceImpl implements QuotProductService {
         QuotProductEntity quotProductEntity = quotProductRepository.findByQpCode(qpCode);
 
 //        quotProductEntity.setQpCode(quotProduct.getQpCode());
-        quotProductEntity.setQpBindCode(quotProduct.getQpBindCode());
-        quotProductEntity.setQpBinder(quotProduct.getQpBinder());
         quotProductEntity.setQpComm(quotProduct.getQpComm());
-        quotProductEntity.setQpConverted(quotProduct.getQpConverted());
-        quotProductEntity.setQpFap(quotProduct.getQpFap());
         quotProductEntity.setQpPremium(quotProduct.getQpPremium());
         quotProductEntity.setQpProCode(quotProduct.getQpProCode());
         quotProductEntity.setQpProShtDesc(quotProduct.getQpProShtDesc());
         quotProductEntity.setQpQuotNo(quotProduct.getQpQuotNo());
-        quotProductEntity.setQpQuotRevisionNo(quotProduct.getQpQuotRevisionNo());
         quotProductEntity.setQpQuotCode(quotProduct.getQpQuotCode());
-        quotProductEntity.setQpRemarks(quotProduct.getQpRemarks());
-        quotProductEntity.setQpStatus(quotProduct.getQpStatus());
-        quotProductEntity.setQpSubCommAmt(quotProduct.getQpSubCommAmt());
         quotProductEntity.setQpTotalSi(quotProduct.getQpTotalSi());
         quotProductEntity.setQpWefDate(quotProduct.getQpWefDate());
         quotProductEntity.setQpWetDate(quotProduct.getQpWetDate());
+//        quotProductEntity.setQpAgntCode(quotProduct.getQpAgntCode());
 
         QuotProductEntity updatedQuotProductDetails = quotProductRepository.save(quotProductEntity);
 
@@ -84,7 +78,7 @@ public class QuotProductServiceImpl implements QuotProductService {
 
         if(page > 0) page -= 1;
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("qpCode").descending());
 
         Page<QuotProductEntity> quotProductsPage = quotProductRepository.findAll(pageableRequest);
         List<QuotProductEntity> quotProducts = quotProductsPage.getContent();

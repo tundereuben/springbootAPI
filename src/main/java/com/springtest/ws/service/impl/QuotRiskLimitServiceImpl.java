@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -49,65 +50,18 @@ public class QuotRiskLimitServiceImpl implements QuotRiskLimitService {
         QuotRiskLimitEntity quotRiskLimitEntity = quotRiskLimitRepository.findByQrlCode(qrlCode);
 
 //        quotRiskLimitEntity.setQrlCode(quotRiskLimit.getQrlCode());
-        quotRiskLimitEntity.setQrlActualPrem(quotRiskLimit.getQrlActualPrem());
-        quotRiskLimitEntity.setQrlActualRatePrem(quotRiskLimit.getQrlActualRatePrem());
-        quotRiskLimitEntity.setQrlActualPrem(quotRiskLimit.getQrlActualPrem());
-        quotRiskLimitEntity.setQrlCalcGroup(quotRiskLimit.getQrlCalcGroup());
-        quotRiskLimitEntity.setQrlComment(quotRiskLimit.getQrlComment());
-        quotRiskLimitEntity.setQrlCompute(quotRiskLimit.getQrlCompute());
         quotRiskLimitEntity.setQrlCoverType(quotRiskLimit.getQrlCoverType());
-        quotRiskLimitEntity.setQrlDeclarationSection(quotRiskLimit.getQrlDeclarationSection());
         quotRiskLimitEntity.setQrlDesc(quotRiskLimit.getQrlDesc());
         quotRiskLimitEntity.setQrlDualBasis(quotRiskLimit.getQrlDualBasis());
-        quotRiskLimitEntity.setQrlEmlPct(quotRiskLimit.getQrlEmlPct());
-        quotRiskLimitEntity.setQrlExpired(quotRiskLimit.getQrlExpired());
-        quotRiskLimitEntity.setQrlFirstloss(quotRiskLimit.getQrlFirstloss());
-        quotRiskLimitEntity.setQrlFirstlossAmtPcnt(quotRiskLimit.getQrlFirstlossAmtPcnt());
-        quotRiskLimitEntity.setQrlFirstlossValue(quotRiskLimit.getQrlFirstlossValue());
-        quotRiskLimitEntity.setQrlFreeLimit(quotRiskLimit.getQrlFreeLimit());
-        quotRiskLimitEntity.setQrlFreeLimitAmt(quotRiskLimit.getQrlFreeLimitAmt());
-        quotRiskLimitEntity.setQrlIndemFstprd(quotRiskLimit.getQrlIndemFstprd());
-        quotRiskLimitEntity.setQrlIndemFstprdPct(quotRiskLimit.getQrlIndemFstprdPct());
-        quotRiskLimitEntity.setQrlIndemPrd(quotRiskLimit.getQrlIndemPrd());
-        quotRiskLimitEntity.setQrlIndemRemprdPct(quotRiskLimit.getQrlIndemRemprdPct());
-        quotRiskLimitEntity.setQrlIpuCode(quotRiskLimit.getQrlIpuCode());
-        quotRiskLimitEntity.setQrlIsEditable(quotRiskLimit.getQrlIsEditable());
         quotRiskLimitEntity.setQrlLimitAmt(quotRiskLimit.getQrlLimitAmt());
-        quotRiskLimitEntity.setQrlLimitPrd(quotRiskLimit.getQrlLimitPrd());
-        quotRiskLimitEntity.setQrlMinPremium(quotRiskLimit.getQrlMinPremium());
-        quotRiskLimitEntity.setQrlMultiplierDivFactor(quotRiskLimit.getQrlMultiplierDivFactor());
-        quotRiskLimitEntity.setQrlMultiplierRate(quotRiskLimit.getQrlMultiplierRate());
-        quotRiskLimitEntity.setQrlOriginalPremRate(quotRiskLimit.getQrlOriginalPremRate());
-        quotRiskLimitEntity.setQrlPrdType(quotRiskLimit.getQrlPrdType());
-        quotRiskLimitEntity.setQrlPremAccumulation(quotRiskLimit.getQrlPremAccumulation());
         quotRiskLimitEntity.setQrlPremAmt(quotRiskLimit.getQrlPremAmt());
-        quotRiskLimitEntity.setQrlPremProrata(quotRiskLimit.getQrlPremProrata());
         quotRiskLimitEntity.setQrlPremRate(quotRiskLimit.getQrlPremRate());
-        quotRiskLimitEntity.setQrlPrevEndrMultRate(quotRiskLimit.getQrlPrevEndrMultRate());
-        quotRiskLimitEntity.setQrlPrevEndrPremRate(quotRiskLimit.getQrlPrevEndrPremRate());
-        quotRiskLimitEntity.setQrlPrevEndrRateDivFact(quotRiskLimit.getQrlPrevEndrRateDivFact());
-        quotRiskLimitEntity.setQrlPrevLimit(quotRiskLimit.getQrlPrevLimit());
-        quotRiskLimitEntity.setQrlPrevPrem(quotRiskLimit.getQrlPrevPrem());
-        quotRiskLimitEntity.setQrlPrevPremProrata(quotRiskLimit.getQrlPrevPremProrata());
-        quotRiskLimitEntity.setQrlProrataFull(quotRiskLimit.getQrlProrataFull());
-        quotRiskLimitEntity.setQrlPrrMaxRate(quotRiskLimit.getQrlPrrMaxRate());
-        quotRiskLimitEntity.setQrlPrrMinRate(quotRiskLimit.getQrlPrrMinRate());
-        quotRiskLimitEntity.setQrlqrlPrevEndrMultDivFact(quotRiskLimit.getQrlqrlPrevEndrMultDivFact());
-        quotRiskLimitEntity.setQrlRateChangeRemarks(quotRiskLimit.getQrlRateChangeRemarks());
         quotRiskLimitEntity.setQrlRateDesc(quotRiskLimit.getQrlRateDesc());
         quotRiskLimitEntity.setQrlRateDivFactor(quotRiskLimit.getQrlRateDivFactor());
         quotRiskLimitEntity.setQrlRateType(quotRiskLimit.getQrlRateType());
-        quotRiskLimitEntity.setQrlRowNum(quotRiskLimit.getQrlRowNum());
         quotRiskLimitEntity.setQrlSectCode(quotRiskLimit.getQrlSectCode());
-        quotRiskLimitEntity.setQrlSectExcessDetail(quotRiskLimit.getQrlSectExcessDetail());
         quotRiskLimitEntity.setQrlSectShtDesc(quotRiskLimit.getQrlSectShtDesc());
         quotRiskLimitEntity.setQrlSectType(quotRiskLimit.getQrlSectType());
-        quotRiskLimitEntity.setQrlSiLimitType(quotRiskLimit.getQrlSiLimitType());
-        quotRiskLimitEntity.setQrlSiRate(quotRiskLimit.getQrlSiRate());
-        quotRiskLimitEntity.setQrlTopLocDivFact(quotRiskLimit.getQrlTopLocDivFact());
-        quotRiskLimitEntity.setQrlTopLocRate(quotRiskLimit.getQrlTopLocRate());
-        quotRiskLimitEntity.setQrlUsedLimit(quotRiskLimit.getQrlUsedLimit());
-
 
         QuotRiskLimitEntity updatedQuotRiskLimitDetails = quotRiskLimitRepository.save(quotRiskLimitEntity);
 
@@ -128,7 +82,7 @@ public class QuotRiskLimitServiceImpl implements QuotRiskLimitService {
 
         if(page > 0) page -= 1;
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("qrlCode").descending());
 
         Page<QuotRiskLimitEntity> quotRiskLimitsPage = quotRiskLimitRepository.findAll(pageableRequest);
         List<QuotRiskLimitEntity> quotRiskLimits = quotRiskLimitsPage.getContent();

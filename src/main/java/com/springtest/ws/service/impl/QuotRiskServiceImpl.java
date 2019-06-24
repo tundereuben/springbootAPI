@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -50,40 +51,14 @@ public class QuotRiskServiceImpl implements QuotRiskService {
         QuotRiskEntity quotRiskEntity = quotRiskRepository.findByQrCode(qrCode);
 
         quotRiskEntity.setQrCode(quotRisk.getQrCode());
-        quotRiskEntity.setQrAllowedCommRate(quotRisk.getQrAllowedCommRate());
-        quotRiskEntity.setQrAnnualPrem(quotRisk.getQrAnnualPrem());
-        quotRiskEntity.setQrBindCode(quotRisk.getQrBindCode());
-        quotRiskEntity.setQrClntCode(quotRisk.getQrClntCode());
-//        quotRiskEntity.setQrClntShtDesc(quotRisk.getQrClntShtDesc());
-        quotRiskEntity.setQrClntType(quotRisk.getQrClntType());
-        quotRiskEntity.setQrCommAmt(quotRisk.getQrCommAmt());
-        quotRiskEntity.setQrComment(quotRisk.getQrComment());
-        quotRiskEntity.setQrComRate(quotRisk.getQrComRate());
-        quotRiskEntity.setQrConveyanceType(quotRisk.getQrConveyanceType());
-        quotRiskEntity.setQrCoverDays(quotRisk.getQrCoverDays());
+        quotRiskEntity.setQrClntCode(quotRisk.getQrClntCode());;
         quotRiskEntity.setQrCovtCode(quotRisk.getQrCovtCode());
-        quotRiskEntity.setQrCovtShtDesc(quotRisk.getQrCovtShtDesc());
-        quotRiskEntity.setQrEnforceCvtMinPrem(quotRisk.getQrEnforceCvtMinPrem());
-        quotRiskEntity.setQrFp(quotRisk.getQrFp());
         quotRiskEntity.setQrItemDesc(quotRisk.getQrItemDesc());
-        quotRiskEntity.setQrLtaCommAmt(quotRisk.getQrLtaCommAmt());
-        quotRiskEntity.setQrLtaCommRate(quotRisk.getQrLtaCommRate());
-        quotRiskEntity.setQrMinPremiumUsed(quotRisk.getQrMinPremiumUsed());
-        quotRiskEntity.setQrMktrComAmt(quotRisk.getQrMktrComAmt());
-        quotRiskEntity.setQrMktrComRate(quotRisk.getQrMktrComRate());
-        quotRiskEntity.setQrNcdLevel(quotRisk.getQrNcdLevel());
-        quotRiskEntity.setQrPremium(quotRisk.getQrPremium());
         quotRiskEntity.setQrPropertyId(quotRisk.getQrPropertyId());
-        quotRiskEntity.setQrPrsCode(quotRisk.getQrPrsCode());
         quotRiskEntity.setQrQpCode(quotRisk.getQrQpCode());
-        quotRiskEntity.setQrQty(quotRisk.getQrQty());
         quotRiskEntity.setQrQuotCode(quotRisk.getQrQuotCode());
         quotRiskEntity.setQrQuotNo(quotRisk.getQrQuotNo());
-        quotRiskEntity.setQrQuotRevisionNo(quotRisk.getQrQuotRevisionNo());
         quotRiskEntity.setQrSclCode(quotRisk.getQrSclCode());
-        quotRiskEntity.setQrSubCommAmt(quotRisk.getQrSubCommAmt());
-        quotRiskEntity.setQrSubCommRate(quotRisk.getQrSubCommRate());
-        quotRiskEntity.setQrValue(quotRisk.getQrValue());
         quotRiskEntity.setQrWefDate(quotRisk.getQrWefDate());
         quotRiskEntity.setQrWetDate(quotRisk.getQrWetDate());
 
@@ -106,7 +81,7 @@ public class QuotRiskServiceImpl implements QuotRiskService {
 
         if(page > 0) page -= 1;
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("qrCode").descending());
 
         Page<QuotRiskEntity> quotRisksPage = quotRiskRepository.findAll(pageableRequest);
         List<QuotRiskEntity> quotRisks = quotRisksPage.getContent();

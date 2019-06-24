@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -53,30 +54,16 @@ public class QuotationServiceImpl implements QuotationService {
         quotationEntity.setQuotCode(quotation.getQuotCode());
         quotationEntity.setQuotNo(quotation.getQuotNo());
         quotationEntity.setQuotClntCode(quotation.getQuotClntCode());
-        quotationEntity.setQuotBrnCode(quotation.getQuotBrnCode());
-        quotationEntity.setQuotCurCode(quotation.getQuotCurCode());
+        quotationEntity.setQuotAgntCode(quotation.getQuotAgntCode());
+        quotationEntity.setQuotSource(quotation.getQuotSource());
+        quotationEntity.setQuotBranch(quotation.getQuotBranch());
         quotationEntity.setQuotCurSymbol(quotation.getQuotCurSymbol());
         quotationEntity.setQuotCoverFrom(quotation.getQuotCoverFrom());
         quotationEntity.setQuotCoverTo(quotation.getQuotCoverTo());
-        quotationEntity.setQuotTotPropertyVal(quotation.getQuotTotPropertyVal());
+        quotationEntity.setQuotPaymentFrequency(quotation.getQuotPaymentFrequency());
         quotationEntity.setQuotDate(quotation.getQuotDate());
-        quotationEntity.setQuotStatus(quotation.getQuotStatus());
-        quotationEntity.setQuotExpiryDate(quotation.getQuotExpiryDate());
-        quotationEntity.setQuotPremium(quotation.getQuotPremium());
-        quotationEntity.setQuotCommAmt(quotation.getQuotCommAmt());
-        quotationEntity.setQuotAuthorisedBy(quotation.getQuotAuthorisedBy());
-        quotationEntity.setQuotAuthorisedDt(quotation.getQuotAuthorisedDt());
-        quotationEntity.setQuotConfirmed(quotation.getQuotConfirmed());
-        quotationEntity.setQuotConfirmedBy(quotation.getQuotConfirmedBy());
-        quotationEntity.setQuotConfirmedDt(quotation.getQuotConfirmedDt());
-        quotationEntity.setQuotReadyBy(quotation.getQuotReadyBy());
-        quotationEntity.setQuotReadyDate(quotation.getQuotReadyDate());
-        quotationEntity.setQuotRevised(quotation.getQuotRevised());
-        quotationEntity.setQuotPreparedBy(quotation.getQuotPreparedBy());
-        quotationEntity.setQuotClntType(quotation.getQuotClntType());
-        quotationEntity.setQuotPreparedDt(quotation.getQuotPreparedDt());
-        quotationEntity.setQuotCancelReason(quotation.getQuotCancelReason());
-        quotationEntity.setQuotFreqOfPayment(quotation.getQuotFreqOfPayment());
+
+
 
         QuotationEntity updatedQuotationDetails = quotationRepository.save(quotationEntity);
 
@@ -97,7 +84,7 @@ public class QuotationServiceImpl implements QuotationService {
 
         if(page > 0) page -= 1;
 
-        Pageable pageableRequest = PageRequest.of(page, limit);
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("quotCode").descending());
 
         Page<QuotationEntity> quotationsPage = quotationRepository.findAll(pageableRequest);
         List<QuotationEntity> quotations = quotationsPage.getContent();

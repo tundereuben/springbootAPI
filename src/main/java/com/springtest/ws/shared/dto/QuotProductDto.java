@@ -25,6 +25,7 @@ public class QuotProductDto implements Serializable {
     public int qpBindCode;
     public BigDecimal qpSubCommAmt;
     public String qpConverted;
+//    public int qpAgntCode;
 
     public int getQpCode() {
         return qpCode;
@@ -169,4 +170,12 @@ public class QuotProductDto implements Serializable {
     public void setQpConverted(String qpConverted) {
         this.qpConverted = qpConverted;
     }
+
+//    public int getQpAgntCode() {
+//        return qpAgntCode;
+//    }
+//
+//    public void setQpAgntCode(int qpAgntCode) {
+//        this.qpAgntCode = qpAgntCode;
+//    }
 }
