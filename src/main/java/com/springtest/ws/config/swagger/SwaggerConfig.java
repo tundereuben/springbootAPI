@@ -38,11 +38,19 @@ public class SwaggerConfig {
                     "Swagger Webservice",
                     "1.0.0",
                     "To be provided",
-                    new Contact("Tunde", "#", "m@m.com"),
+                    new Contact("Tunde Ogunjimi", "www.turnkeyafrica.com", "tundeogunjimi@gmail.com"),
                     "GNU",
                     "To be provided"
             );
         }
+
+//        private ApiInfo apiInfo() {
+//        return new ApiInfoBuilder()
+//                .title("Swagger Web Service")
+//                .description("List all APIs for iBroking App")
+//                .version("1.0")
+//                .build();
+//        }
     }
 
 

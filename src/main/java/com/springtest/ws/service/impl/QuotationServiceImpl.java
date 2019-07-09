@@ -52,7 +52,7 @@ public class QuotationServiceImpl implements QuotationService {
         QuotationEntity quotationEntity = quotationRepository.findByQuotCode(quotCode);
 
         quotationEntity.setQuotCode(quotation.getQuotCode());
-        quotationEntity.setQuotNo(quotation.getQuotNo());
+//        quotationEntity.setQuotNo(quotation.getQuotNo());
         quotationEntity.setQuotClntCode(quotation.getQuotClntCode());
         quotationEntity.setQuotAgntCode(quotation.getQuotAgntCode());
         quotationEntity.setQuotSource(quotation.getQuotSource());

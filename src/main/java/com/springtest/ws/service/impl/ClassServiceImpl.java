@@ -24,8 +24,6 @@ public class ClassServiceImpl implements ClassService {
     @Override
     public ClassDto createClass(ClassDto _class) {
 
-//        ClassEntity storedClassDetails = classRepository.findByClaCode(_class.getClaCode());
-
         if(classRepository.findByClaCode(_class.getClaCode()) != null) throw new RuntimeException("Record already exist");
 
         ClassEntity classEntity = new ClassEntity();

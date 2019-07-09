@@ -40,6 +40,14 @@ public class QuotRiskDetailsRequestModel {
         this.qrQuotNo = qrQuotNo;
     }
 
+    public int getQrClntCode() {
+        return qrClntCode;
+    }
+
+    public void setQrClntCode(int qrClntCode) {
+        this.qrClntCode = qrClntCode;
+    }
+
     public String getQrPropertyId() {
         return qrPropertyId;
     }
@@ -94,13 +102,5 @@ public class QuotRiskDetailsRequestModel {
 
     public void setQrWetDate(Date qrWetDate) {
         this.qrWetDate = qrWetDate;
-    }
-
-    public int getQrClntCode() {
-        return qrClntCode;
-    }
-
-    public void setQrClntCode(int qrClntCode) {
-        this.qrClntCode = qrClntCode;
     }
 }

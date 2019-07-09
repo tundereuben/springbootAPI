@@ -50,14 +50,14 @@ public class QuotRiskServiceImpl implements QuotRiskService {
         QuotRiskDto returnValue = new QuotRiskDto();
         QuotRiskEntity quotRiskEntity = quotRiskRepository.findByQrCode(qrCode);
 
-        quotRiskEntity.setQrCode(quotRisk.getQrCode());
-        quotRiskEntity.setQrClntCode(quotRisk.getQrClntCode());;
+//        quotRiskEntity.setQrCode(quotRisk.getQrCode());
+//        quotRiskEntity.setQrClntCode(quotRisk.getQrClntCode());;
         quotRiskEntity.setQrCovtCode(quotRisk.getQrCovtCode());
         quotRiskEntity.setQrItemDesc(quotRisk.getQrItemDesc());
         quotRiskEntity.setQrPropertyId(quotRisk.getQrPropertyId());
-        quotRiskEntity.setQrQpCode(quotRisk.getQrQpCode());
-        quotRiskEntity.setQrQuotCode(quotRisk.getQrQuotCode());
-        quotRiskEntity.setQrQuotNo(quotRisk.getQrQuotNo());
+//        quotRiskEntity.setQrQpCode(quotRisk.getQrQpCode());
+//        quotRiskEntity.setQrQuotCode(quotRisk.getQrQuotCode());
+//        quotRiskEntity.setQrQuotNo(quotRisk.getQrQuotNo());
         quotRiskEntity.setQrSclCode(quotRisk.getQrSclCode());
         quotRiskEntity.setQrWefDate(quotRisk.getQrWefDate());
         quotRiskEntity.setQrWetDate(quotRisk.getQrWetDate());
