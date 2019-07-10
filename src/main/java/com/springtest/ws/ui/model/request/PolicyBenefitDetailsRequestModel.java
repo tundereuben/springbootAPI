@@ -1,24 +1,12 @@
-package com.springtest.ws.shared.dto;
+package com.springtest.ws.ui.model.request;
 
-import java.io.Serializable;
+public class PolicyBenefitDetailsRequestModel {
 
-public class PolicyBenefitDto implements Serializable {
-    private static final long serialVersionUID = -4627719071491506411L;
-
-    private int bftCode;
     private String bftName;
     private float bftRate;
     private int bftNo;
     private float bftMultBy;
     private int bftPolCode;
-
-    public int getBftCode() {
-        return bftCode;
-    }
-
-    public void setBftCode(int bftCode) {
-        this.bftCode = bftCode;
-    }
 
     public String getBftName() {
         return bftName;

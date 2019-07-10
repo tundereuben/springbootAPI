@@ -1,10 +1,16 @@
-package com.springtest.ws.shared.dto;
+package com.springtest.ws.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 
-public class PolicyBenefitDto implements Serializable {
-    private static final long serialVersionUID = -4627719071491506411L;
+@Entity(name="pol_benefits")
+public class PolicyBenefitEntity implements Serializable {
+    private static final long serialVersionUID = 6243388024980807212L;
 
+    @Id
+    @Column(nullable = false, unique = true)
     private int bftCode;
     private String bftName;
     private float bftRate;
