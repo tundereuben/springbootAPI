@@ -56,6 +56,7 @@ public class PolicyLoadingServiceImpl implements PolicyLoadingService {
         policyLoadingEntity.setLoadType(loading.getLoadType());
         policyLoadingEntity.setLoadCalcOn(loading.getLoadCalcOn());
         policyLoadingEntity.setLoadPolCode(loading.getLoadPolCode());
+        policyLoadingEntity.setLoadDefaultValue(loading.getLoadDefaultValue());
 
         PolicyLoadingEntity updateLoadDetails = policyLoadingRepository.save(policyLoadingEntity);
 

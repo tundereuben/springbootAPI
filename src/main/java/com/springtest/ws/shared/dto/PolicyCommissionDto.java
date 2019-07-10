@@ -1,6 +1,7 @@
 package com.springtest.ws.shared.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class PolicyCommissionDto implements Serializable {
     private static final long serialVersionUID = -4924218607666527164L;
@@ -10,6 +11,7 @@ public class PolicyCommissionDto implements Serializable {
     private String commType;
     private String commCalcOn;
     private int commPolCode;
+    private BigDecimal commDefaultValue;
 
     public int getCommCode() {
         return commCode;
@@ -49,5 +51,13 @@ public class PolicyCommissionDto implements Serializable {
 
     public void setCommPolCode(int commPolCode) {
         this.commPolCode = commPolCode;
+    }
+
+    public BigDecimal getCommDefaultValue() {
+        return commDefaultValue;
+    }
+
+    public void setCommDefaultValue(BigDecimal commDefaultValue) {
+        this.commDefaultValue = commDefaultValue;
     }
 }

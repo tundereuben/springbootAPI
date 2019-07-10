@@ -1,11 +1,14 @@
 package com.springtest.ws.ui.model.request;
 
+import java.math.BigDecimal;
+
 public class PolicyDiscountDetailsRequestModel {
 
     private String dsctName;
     private String dsctType;
     private String dsctCalcOn;
     private int dsctPolCode;
+    private BigDecimal dsctDefaultValue;
 
     public String getDsctName() {
         return dsctName;
@@ -37,5 +40,13 @@ public class PolicyDiscountDetailsRequestModel {
 
     public void setDsctPolCode(int dsctPolCode) {
         this.dsctPolCode = dsctPolCode;
+    }
+
+    public BigDecimal getDsctDefaultValue() {
+        return dsctDefaultValue;
+    }
+
+    public void setDsctDefaultValue(BigDecimal dsctDefaultValue) {
+        this.dsctDefaultValue = dsctDefaultValue;
     }
 }

@@ -3,6 +3,7 @@ package com.springtest.ws.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity(name="pol_loadings")
 public class PolicyLoadingEntity implements Serializable {
@@ -14,6 +15,7 @@ public class PolicyLoadingEntity implements Serializable {
     private String loadType;
     private String loadCalcOn;
     private int loadPolCode;
+    private BigDecimal loadDefaultValue;
 
     public int getLoadCode() {
         return loadCode;
@@ -53,5 +55,13 @@ public class PolicyLoadingEntity implements Serializable {
 
     public void setLoadPolCode(int loadPolCode) {
         this.loadPolCode = loadPolCode;
+    }
+
+    public BigDecimal getLoadDefaultValue() {
+        return loadDefaultValue;
+    }
+
+    public void setLoadDefaultValue(BigDecimal loadDefaultValue) {
+        this.loadDefaultValue = loadDefaultValue;
     }
 }

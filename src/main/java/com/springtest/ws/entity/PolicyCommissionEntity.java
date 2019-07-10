@@ -3,6 +3,7 @@ package com.springtest.ws.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity(name="pol_commissions")
 public class PolicyCommissionEntity implements Serializable {
@@ -14,6 +15,7 @@ public class PolicyCommissionEntity implements Serializable {
     private String commType;
     private String commCalcOn;
     private int commPolCode;
+    private BigDecimal commDefaultValue;
 
     public int getCommCode() {
         return commCode;
@@ -53,5 +55,13 @@ public class PolicyCommissionEntity implements Serializable {
 
     public void setCommPolCode(int commPolCode) {
         this.commPolCode = commPolCode;
+    }
+
+    public BigDecimal getCommDefaultValue() {
+        return commDefaultValue;
+    }
+
+    public void setCommDefaultValue(BigDecimal commDefaultValue) {
+        this.commDefaultValue = commDefaultValue;
     }
 }

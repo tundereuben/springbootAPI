@@ -1,6 +1,7 @@
 package com.springtest.ws.shared.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class PolicyDiscountDto implements Serializable {
     private static final long serialVersionUID = -7611549666401856955L;
@@ -10,6 +11,7 @@ public class PolicyDiscountDto implements Serializable {
     private String dsctType;
     private String dsctCalcOn;
     private int dsctPolCode;
+    private BigDecimal dsctDefaultValue;
 
     public int getDsctCode() {
         return dsctCode;
@@ -49,5 +51,13 @@ public class PolicyDiscountDto implements Serializable {
 
     public void setDsctPolCode(int dsctPolCode) {
         this.dsctPolCode = dsctPolCode;
+    }
+
+    public BigDecimal getDsctDefaultValue() {
+        return dsctDefaultValue;
+    }
+
+    public void setDsctDefaultValue(BigDecimal dsctDefaultValue) {
+        this.dsctDefaultValue = dsctDefaultValue;
     }
 }

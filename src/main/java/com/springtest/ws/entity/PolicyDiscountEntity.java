@@ -3,6 +3,7 @@ package com.springtest.ws.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity(name="pol_discounts")
 public class PolicyDiscountEntity implements Serializable {
@@ -15,6 +16,7 @@ public class PolicyDiscountEntity implements Serializable {
     private String dsctType;
     private String dsctCalcOn;
     private int dsctPolCode;
+    private BigDecimal dsctDefaultValue;
 
     public int getDsctCode() {
         return dsctCode;
@@ -54,5 +56,13 @@ public class PolicyDiscountEntity implements Serializable {
 
     public void setDsctPolCode(int dsctPolCode) {
         this.dsctPolCode = dsctPolCode;
+    }
+
+    public BigDecimal getDsctDefaultValue() {
+        return dsctDefaultValue;
+    }
+
+    public void setDsctDefaultValue(BigDecimal dsctDefaultValue) {
+        this.dsctDefaultValue = dsctDefaultValue;
     }
 }

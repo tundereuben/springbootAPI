@@ -1,6 +1,7 @@
 package com.springtest.ws.shared.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class PolicyLoadingDto implements Serializable {
     public static final long serialVersionUID = -5992167021410650855L;
@@ -10,6 +11,7 @@ public class PolicyLoadingDto implements Serializable {
     private String loadType;
     private String loadCalcOn;
     private int loadPolCode;
+    private BigDecimal loadDefaultValue;
 
     public int getLoadCode() {
         return loadCode;
@@ -49,5 +51,13 @@ public class PolicyLoadingDto implements Serializable {
 
     public void setLoadPolCode(int loadPolCode) {
         this.loadPolCode = loadPolCode;
+    }
+
+    public BigDecimal getLoadDefaultValue() {
+        return loadDefaultValue;
+    }
+
+    public void setLoadDefaultValue(BigDecimal loadDefaultValue) {
+        this.loadDefaultValue = loadDefaultValue;
     }
 }

@@ -1,5 +1,7 @@
 package com.springtest.ws.ui.model.response;
 
+import java.math.BigDecimal;
+
 public class PolicyCommissionRest {
 
     private int commCode;
@@ -7,6 +9,7 @@ public class PolicyCommissionRest {
     private String commType;
     private String commCalcOn;
     private int commPolCode;
+    private BigDecimal commDefaultValue;
 
     public int getCommCode() {
         return commCode;
@@ -46,5 +49,13 @@ public class PolicyCommissionRest {
 
     public void setCommPolCode(int commPolCode) {
         this.commPolCode = commPolCode;
+    }
+
+    public BigDecimal getCommDefaultValue() {
+        return commDefaultValue;
+    }
+
+    public void setCommDefaultValue(BigDecimal commDefaultValue) {
+        this.commDefaultValue = commDefaultValue;
     }
 }

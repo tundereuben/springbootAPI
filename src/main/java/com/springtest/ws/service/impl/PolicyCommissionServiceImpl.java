@@ -57,6 +57,7 @@ public class PolicyCommissionServiceImpl implements PolicyCommissionService {
         policyCommissionEntity.setCommType(commission.getCommType());
         policyCommissionEntity.setCommCalcOn(commission.getCommCalcOn());
         policyCommissionEntity.setCommPolCode(commission.getCommPolCode());
+        policyCommissionEntity.setCommDefaultValue(commission.getCommDefaultValue());
 
         PolicyCommissionEntity updateCommDetails = policyCommissionRepository.save(policyCommissionEntity);
 

@@ -55,6 +55,7 @@ public class PolicyDiscountServiceImpl implements PolicyDiscountService {
         policyDiscountEntity.setDsctType(discount.getDsctType());
         policyDiscountEntity.setDsctCalcOn(discount.getDsctCalcOn());
         policyDiscountEntity.setDsctPolCode(discount.getDsctPolCode());
+        policyDiscountEntity.setDsctDefaultValue(discount.getDsctDefaultValue());
 
         PolicyDiscountEntity updateDiscountDetails = policyDiscountRepository.save(policyDiscountEntity);
 

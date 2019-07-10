@@ -1,21 +1,8 @@
-package com.springtest.ws.shared.dto;
+package com.springtest.ws.ui.model.request;
 
-import java.io.Serializable;
-
-public class PolicyExtensionDto implements Serializable {
-    private static final long serialVersionUID = 5415073877827234398L;
-
-    private int extCode;
+public class PolicyExtensionDetailsRequestModel {
     private String extName;
     private int extPolCode;
-
-    public int getExtCode() {
-        return extCode;
-    }
-
-    public void setExtCode(int extCode) {
-        this.extCode = extCode;
-    }
 
     public String getExtName() {
         return extName;

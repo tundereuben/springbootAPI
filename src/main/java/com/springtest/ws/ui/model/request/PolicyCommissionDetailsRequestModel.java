@@ -1,10 +1,13 @@
 package com.springtest.ws.ui.model.request;
 
+import java.math.BigDecimal;
+
 public class PolicyCommissionDetailsRequestModel {
     private String commName;
     private String commType;
     private String commCalcOn;
     private int commPolCode;
+    private BigDecimal commDefaultValue;
 
     public String getCommName() {
         return commName;
@@ -36,5 +39,13 @@ public class PolicyCommissionDetailsRequestModel {
 
     public void setCommPolCode(int commPolCode) {
         this.commPolCode = commPolCode;
+    }
+
+    public BigDecimal getCommDefaultValue() {
+        return commDefaultValue;
+    }
+
+    public void setCommDefaultValue(BigDecimal commDefaultValue) {
+        this.commDefaultValue = commDefaultValue;
     }
 }

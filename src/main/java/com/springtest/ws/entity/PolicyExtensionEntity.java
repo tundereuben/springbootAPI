@@ -1,12 +1,22 @@
-package com.springtest.ws.shared.dto;
+package com.springtest.ws.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 
-public class PolicyExtensionDto implements Serializable {
-    private static final long serialVersionUID = 5415073877827234398L;
+@Entity(name="pol_extensions")
+public class PolicyExtensionEntity implements Serializable {
+    private static final long serialVersionUID = -4428859647067791064L;
 
+    @Id
+    @Column(nullable = false, unique = true)
     private int extCode;
+
+    @Column(nullable = false)
     private String extName;
+
+    @Column(nullable = false)
     private int extPolCode;
 
     public int getExtCode() {

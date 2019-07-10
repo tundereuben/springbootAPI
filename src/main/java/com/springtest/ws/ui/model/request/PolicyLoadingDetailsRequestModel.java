@@ -1,11 +1,14 @@
 package com.springtest.ws.ui.model.request;
 
+import java.math.BigDecimal;
+
 public class PolicyLoadingDetailsRequestModel {
 
     private String loadName;
     private String loadType;
     private String loadCalcOn;
     private int loadPolCode;
+    private BigDecimal loadDefaultValue;
 
     public String getLoadName() {
         return loadName;
@@ -37,5 +40,13 @@ public class PolicyLoadingDetailsRequestModel {
 
     public void setLoadPolCode(int loadPolCode) {
         this.loadPolCode = loadPolCode;
+    }
+
+    public BigDecimal getLoadDefaultValue() {
+        return loadDefaultValue;
+    }
+
+    public void setLoadDefaultValue(BigDecimal loadDefaultValue) {
+        this.loadDefaultValue = loadDefaultValue;
     }
 }
