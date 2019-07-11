@@ -1,10 +1,12 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.PolicyClauseEntity;
+import com.springtest.ws.io.repositories.PolicyClauseRepository;
 import com.springtest.ws.service.PolicyClauseService;
 import com.springtest.ws.shared.dto.PolicyClauseDto;
 import com.springtest.ws.ui.model.request.PolicyClauseDetailsRequestModel;
-import com.springtest.ws.ui.model.response.PolicyClauseRest;
 import com.springtest.ws.ui.model.response.OperationStatusModel;
+import com.springtest.ws.ui.model.response.PolicyClauseRest;
 import com.springtest.ws.ui.model.response.RequestOperationName;
 import com.springtest.ws.ui.model.response.RequestOperationStatus;
 import org.springframework.beans.BeanUtils;
@@ -20,6 +22,7 @@ public class PolicyClauseController {
 
     @Autowired
     PolicyClauseService policyClauseService;
+    PolicyClauseRepository policyClauseRepository;
 
     
     @GetMapping (path="/{id}")
@@ -71,7 +74,7 @@ public class PolicyClauseController {
     }
 
     @GetMapping
-    public List<PolicyClauseRest> getClasses(@RequestParam(value="page", defaultValue = "0") int page,
+    public List<PolicyClauseRest> getClauses(@RequestParam(value="page", defaultValue = "0") int page,
                                              @RequestParam(value="limit", defaultValue = "25") int limit) {
 
         List<PolicyClauseRest> returnValue = new ArrayList<>();
@@ -86,4 +89,12 @@ public class PolicyClauseController {
 
         return returnValue;
     }
+
+    @GetMapping(path="polCode")
+
+    public List<PolicyClauseEntity> getClausesByPolicyCode(@RequestParam(value = "polCode") final int clsPolCode){
+        
+      return policyClauseService.getPolicyClauses(clsPolCode);
+    }
+
 }

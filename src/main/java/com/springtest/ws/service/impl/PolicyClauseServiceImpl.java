@@ -87,5 +87,13 @@ public class PolicyClauseServiceImpl implements PolicyClauseService {
 
         return returnValue;
     }
+
+    @Override
+    public List<PolicyClauseEntity> getPolicyClauses(int clsPolCode) {
+        List<PolicyClauseEntity> returnValue = policyClauseRepository.findAllByClsPolCode(clsPolCode);
+        return returnValue;
+    }
+
+
 }
 
