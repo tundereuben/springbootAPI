@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.PolicyExtensionEntity;
 import com.springtest.ws.service.PolicyExtensionService;
 import com.springtest.ws.shared.dto.PolicyExtensionDto;
 import com.springtest.ws.ui.model.request.PolicyExtensionDetailsRequestModel;
@@ -84,5 +85,11 @@ public class PolicyExtensionController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="polCode")
+    public List<PolicyExtensionEntity> getExtesnionsByPolicyCode(@RequestParam(value = "polCode") final int extPolCode){
+
+        return policyExtensionService.getPolicyExtensions(extPolCode);
     }
 }

@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.PolicyBenefitEntity;
 import com.springtest.ws.service.PolicyBenefitService;
 import com.springtest.ws.shared.dto.PolicyBenefitDto;
 import com.springtest.ws.ui.model.request.PolicyBenefitDetailsRequestModel;
@@ -84,5 +85,11 @@ public class PolicyBenefitController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="polCode")
+    public List<PolicyBenefitEntity> getBenefitsByPolicyCode(@RequestParam(value = "polCode") final int bftPolCode){
+
+        return policyBenefitService.getPolicyBenefits(bftPolCode);
     }
 }

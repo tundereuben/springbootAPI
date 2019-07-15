@@ -85,4 +85,10 @@ public class PolicyIdServiceImpl implements PolicyIdService {
 
         return returnValue;
     }
+
+    @Override
+    public List<PolicyIdEntity> getPolicyIds(int idPolCode) {
+        List<PolicyIdEntity> returnValue = policyIdRepository.findAllByIdPolCode(idPolCode);
+        return returnValue;
+    }
 }

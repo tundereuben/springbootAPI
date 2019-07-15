@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.PolicyDiscountEntity;
 import com.springtest.ws.service.PolicyDiscountService;
 import com.springtest.ws.shared.dto.PolicyDiscountDto;
 import com.springtest.ws.ui.model.request.PolicyDiscountDetailsRequestModel;
@@ -84,5 +85,11 @@ public class PolicyDiscountController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="polCode")
+    public List<PolicyDiscountEntity> getDiscountsByPolicyCode(@RequestParam(value = "polCode") final int dsctPolCode){
+
+        return policyDiscountService.getPolicyDiscounts(dsctPolCode);
     }
 }

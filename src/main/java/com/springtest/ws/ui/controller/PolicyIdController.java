@@ -1,10 +1,11 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.PolicyIdEntity;
 import com.springtest.ws.service.PolicyIdService;
 import com.springtest.ws.shared.dto.PolicyIdDto;
 import com.springtest.ws.ui.model.request.PolicyIdDetailsRequestModel;
-import com.springtest.ws.ui.model.response.PolicyIdRest;
 import com.springtest.ws.ui.model.response.OperationStatusModel;
+import com.springtest.ws.ui.model.response.PolicyIdRest;
 import com.springtest.ws.ui.model.response.RequestOperationName;
 import com.springtest.ws.ui.model.response.RequestOperationStatus;
 import org.springframework.beans.BeanUtils;
@@ -83,5 +84,11 @@ public class PolicyIdController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="polCode")
+    public List<PolicyIdEntity> getIdsByPolicyCode(@RequestParam(value = "polCode") final int idPolCode){
+
+        return policyIdService.getPolicyIds(idPolCode);
     }
 }

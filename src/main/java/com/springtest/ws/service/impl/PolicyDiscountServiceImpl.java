@@ -88,4 +88,10 @@ public class PolicyDiscountServiceImpl implements PolicyDiscountService {
 
         return returnValue;
     }
+
+    @Override
+    public List<PolicyDiscountEntity> getPolicyDiscounts(int discountPolCode) {
+        List<PolicyDiscountEntity> returnValue = policyDiscountRepository.findAllByDsctPolCode(discountPolCode);
+        return returnValue;
+    }
 }

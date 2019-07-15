@@ -90,4 +90,10 @@ public class PolicyCommissionServiceImpl implements PolicyCommissionService {
 
         return returnValue;
     }
+
+    @Override
+    public List<PolicyCommissionEntity> getPolicyCommissions(int commPolCode) {
+        List<PolicyCommissionEntity> returnValue = policyCommissionRepository.findAllByCommPolCode(commPolCode);
+        return returnValue;
+    }
 }

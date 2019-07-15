@@ -89,4 +89,10 @@ public class PolicyLoadingServiceImpl implements PolicyLoadingService {
 
         return returnValue;
     }
+
+    @Override
+    public List<PolicyLoadingEntity> getPolicyLoadings(int loadPolCode) {
+        List<PolicyLoadingEntity> returnValue = policyLoadingRepository.findAllByLoadPolCode(loadPolCode);
+        return returnValue;
+    }
 }

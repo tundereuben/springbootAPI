@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.PolicyCommissionEntity;
 import com.springtest.ws.service.PolicyCommissionService;
 import com.springtest.ws.shared.dto.PolicyCommissionDto;
 import com.springtest.ws.ui.model.request.PolicyCommissionDetailsRequestModel;
@@ -84,5 +85,11 @@ public class PolicyCommissionController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="polCode")
+    public List<PolicyCommissionEntity> getCommissionsByPolicyCode(@RequestParam(value = "polCode") final int commPolCode){
+
+        return policyCommissionService.getPolicyCommissions(commPolCode);
     }
 }

@@ -85,4 +85,10 @@ public class PolicyExtensionServiceImpl implements PolicyExtensionService {
 
         return returnValue;
     }
+
+    @Override
+    public List<PolicyExtensionEntity> getPolicyExtensions(int extPolCode) {
+        List<PolicyExtensionEntity> returnValue = policyExtensionRepository.findAllByExtPolCode(extPolCode);
+        return returnValue;
+    }
 }

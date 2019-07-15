@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.PolicyLoadingEntity;
 import com.springtest.ws.service.PolicyLoadingService;
 import com.springtest.ws.shared.dto.PolicyLoadingDto;
 import com.springtest.ws.ui.model.request.PolicyLoadingDetailsRequestModel;
@@ -84,5 +85,11 @@ public class PolicyLoadingController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="polCode")
+    public List<PolicyLoadingEntity> getLoadingsByPolicyCode(@RequestParam(value = "polCode") final int loadPolCode){
+
+        return policyLoadingService.getPolicyLoadings(loadPolCode);
     }
 }
