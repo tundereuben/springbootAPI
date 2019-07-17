@@ -57,6 +57,7 @@ public class PolicyLoadingServiceImpl implements PolicyLoadingService {
         policyLoadingEntity.setLoadCalcOn(loading.getLoadCalcOn());
         policyLoadingEntity.setLoadPolCode(loading.getLoadPolCode());
         policyLoadingEntity.setLoadDefaultValue(loading.getLoadDefaultValue());
+        policyLoadingEntity.setLoadSclCode(loading.getLoadSclCode());
 
         PolicyLoadingEntity updateLoadDetails = policyLoadingRepository.save(policyLoadingEntity);
 
@@ -93,6 +94,12 @@ public class PolicyLoadingServiceImpl implements PolicyLoadingService {
     @Override
     public List<PolicyLoadingEntity> getPolicyLoadings(int loadPolCode) {
         List<PolicyLoadingEntity> returnValue = policyLoadingRepository.findAllByLoadPolCode(loadPolCode);
+        return returnValue;
+    }
+
+    @Override
+    public List<PolicyLoadingEntity> getPolicyLoadingsBySubclassCode(int loadSclCode) {
+        List<PolicyLoadingEntity> returnValue = policyLoadingRepository.findAllByLoadSclCode(loadSclCode);
         return returnValue;
     }
 }

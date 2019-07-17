@@ -12,4 +12,5 @@ public interface PolicyExtensionService {
     void deleteExtension(int extCode);
     List<PolicyExtensionDto> getExtensions(int page, int limit);
     List<PolicyExtensionEntity> getPolicyExtensions(int extPolCode);
+    List<PolicyExtensionEntity> getPolicyExtensionsBySclCode(int extSclCode);
 }

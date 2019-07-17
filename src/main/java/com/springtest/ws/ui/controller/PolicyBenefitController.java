@@ -92,4 +92,9 @@ public class PolicyBenefitController {
 
         return policyBenefitService.getPolicyBenefits(bftPolCode);
     }
+
+    @GetMapping(path="sclCode")
+    public List<PolicyBenefitEntity> getBenefitsBySubclassCode(@RequestParam(value = "sclCode") final int bftSclCode){
+        return policyBenefitService.getPolicyBenefitsByBftSclCode(bftSclCode);
+    }
 }

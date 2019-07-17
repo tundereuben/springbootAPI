@@ -92,4 +92,10 @@ public class PolicyDiscountController {
 
         return policyDiscountService.getPolicyDiscounts(dsctPolCode);
     }
+
+    @GetMapping(path="sclCode")
+    public List<PolicyDiscountEntity> getDiscountsBySubclassCode(@RequestParam(value = "sclCode") final int dsctSclCode){
+
+        return policyDiscountService.getPolicyDiscountsBySubclassCode(dsctSclCode);
+    }
 }

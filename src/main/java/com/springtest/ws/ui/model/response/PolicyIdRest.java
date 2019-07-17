@@ -6,6 +6,8 @@ public class PolicyIdRest {
     private String idName;
     private String idType;
     private int idPolCode;
+    private int idSclCode;
+
 
     public int getIdCode() {
         return idCode;
@@ -37,5 +39,13 @@ public class PolicyIdRest {
 
     public void setIdPolCode(int idPolCode) {
         this.idPolCode = idPolCode;
+    }
+
+    public int getIdSclCode() {
+        return idSclCode;
+    }
+
+    public void setIdSclCode(int idSclCode) {
+        this.idSclCode = idSclCode;
     }
 }

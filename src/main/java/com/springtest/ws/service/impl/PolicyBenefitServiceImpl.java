@@ -93,4 +93,10 @@ public class PolicyBenefitServiceImpl implements PolicyBenefitService {
         List<PolicyBenefitEntity> returnValue = policyBenefitRepository.findAllByBftPolCode(bftPolCode);
         return returnValue;
     }
+
+    @Override
+    public List<PolicyBenefitEntity> getPolicyBenefitsByBftSclCode(int bftSclCode) {
+        List<PolicyBenefitEntity> returnValue = policyBenefitRepository.findAllByBftSclCode(bftSclCode);
+        return returnValue;
+    }
 }

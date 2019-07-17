@@ -92,4 +92,10 @@ public class PolicyCommissionController {
 
         return policyCommissionService.getPolicyCommissions(commPolCode);
     }
+
+    @GetMapping(path="sclCode")
+    public List<PolicyCommissionEntity> getCommissionsBySclCode(@RequestParam(value = "sclCode") final int commSclCode){
+
+        return policyCommissionService.getPolicyCommissionsBySubclassCode(commSclCode);
+    }
 }

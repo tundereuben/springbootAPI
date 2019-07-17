@@ -91,4 +91,10 @@ public class PolicyIdController {
 
         return policyIdService.getPolicyIds(idPolCode);
     }
+
+    @GetMapping(path="sclCode")
+    public List<PolicyIdEntity> getIdsBySubclassCode(@RequestParam(value = "sclCode") final int idSclCode){
+
+        return policyIdService.getPolicyIdsBySclCode(idSclCode);
+    }
 }

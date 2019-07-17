@@ -8,6 +8,7 @@ public class PolicyClauseDto implements Serializable {
     private int clsCode;
     private String clsName;
     private int clsPolCode;
+    private int clsSclCode;
 
     public int getClsCode() {
         return clsCode;
@@ -31,5 +32,13 @@ public class PolicyClauseDto implements Serializable {
 
     public void setClsPolCode(int clsPolCode) {
         this.clsPolCode = clsPolCode;
+    }
+
+    public int getClsSclCode() {
+        return clsSclCode;
+    }
+
+    public void setClsSclCode(int clsSclCode) {
+        this.clsSclCode = clsSclCode;
     }
 }

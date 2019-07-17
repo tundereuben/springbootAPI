@@ -11,5 +11,6 @@ public interface PolicyDiscountService {
     PolicyDiscountDto updateDiscount(int discountCode, PolicyDiscountDto discount);
     void deleteDiscount(int discountCode);
     List<PolicyDiscountDto> getDiscounts(int page, int limit);
-    List<PolicyDiscountEntity> getPolicyDiscounts(int discountPolCode);
+    List<PolicyDiscountEntity> getPolicyDiscounts(int dsctPolCode);
+    List<PolicyDiscountEntity> getPolicyDiscountsBySubclassCode(int dsctSclCode);
 }

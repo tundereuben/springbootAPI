@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface PolicyClauseRepository extends PagingAndSortingRepository<PolicyClauseEntity, Long> {
     PolicyClauseEntity findByClsCode(int clsCode);
-
     List<PolicyClauseEntity> findAllByClsPolCode(int clsPolCode);
+    List<PolicyClauseEntity> findAllByClsSclCode(int clsSclCode);
 }

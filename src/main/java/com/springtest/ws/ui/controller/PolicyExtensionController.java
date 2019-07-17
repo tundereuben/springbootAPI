@@ -88,8 +88,14 @@ public class PolicyExtensionController {
     }
 
     @GetMapping(path="polCode")
-    public List<PolicyExtensionEntity> getExtesnionsByPolicyCode(@RequestParam(value = "polCode") final int extPolCode){
+    public List<PolicyExtensionEntity> getExtensionsByPolicyCode(@RequestParam(value = "polCode") final int extPolCode){
 
         return policyExtensionService.getPolicyExtensions(extPolCode);
+    }
+
+    @GetMapping(path="sclCode")
+    public List<PolicyExtensionEntity> getExtensionsBySclCode(@RequestParam(value = "sclCode") final int extSclCode){
+
+        return policyExtensionService.getPolicyExtensionsBySclCode(extSclCode);
     }
 }

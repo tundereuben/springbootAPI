@@ -12,4 +12,5 @@ public interface PolicyIdService {
     void deleteId(int idCode);
     List<PolicyIdDto> getIds(int page, int limit);
     List<PolicyIdEntity> getPolicyIds(int idPolCode);
+    List<PolicyIdEntity> getPolicyIdsBySclCode(int idSclCode);
 }

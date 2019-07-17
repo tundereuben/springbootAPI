@@ -97,4 +97,11 @@ public class PolicyClauseController {
       return policyClauseService.getPolicyClauses(clsPolCode);
     }
 
+    @GetMapping(path="sclCode")
+
+    public List<PolicyClauseEntity> getClausesBySclCode(@RequestParam(value = "sclCode") final int clsSclCode){
+
+        return policyClauseService.getPolicyClausesBySclCode(clsSclCode);
+    }
+
 }

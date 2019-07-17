@@ -12,4 +12,5 @@ public interface PolicyClauseService {
     void deleteClause(int clsCode);
     List<PolicyClauseDto> getClauses(int page, int limit);
     List<PolicyClauseEntity> getPolicyClauses(int clsPolCode);
+    List<PolicyClauseEntity> getPolicyClausesBySclCode(int clsSclCode);
 }

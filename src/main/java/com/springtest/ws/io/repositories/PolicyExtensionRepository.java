@@ -10,4 +10,5 @@ import java.util.List;
 public interface PolicyExtensionRepository extends PagingAndSortingRepository<PolicyExtensionEntity, Long> {
     PolicyExtensionEntity findByExtCode(int extCode);
     List<PolicyExtensionEntity> findAllByExtPolCode(int extPolCode);
+    List<PolicyExtensionEntity> findAllByExtSclCode(int extSclCode);
 }

@@ -56,6 +56,7 @@ public class PolicyDiscountServiceImpl implements PolicyDiscountService {
         policyDiscountEntity.setDsctCalcOn(discount.getDsctCalcOn());
         policyDiscountEntity.setDsctPolCode(discount.getDsctPolCode());
         policyDiscountEntity.setDsctDefaultValue(discount.getDsctDefaultValue());
+        policyDiscountEntity.setDsctSclCode(discount.getDsctSclCode());
 
         PolicyDiscountEntity updateDiscountDetails = policyDiscountRepository.save(policyDiscountEntity);
 
@@ -90,8 +91,14 @@ public class PolicyDiscountServiceImpl implements PolicyDiscountService {
     }
 
     @Override
-    public List<PolicyDiscountEntity> getPolicyDiscounts(int discountPolCode) {
-        List<PolicyDiscountEntity> returnValue = policyDiscountRepository.findAllByDsctPolCode(discountPolCode);
+    public List<PolicyDiscountEntity> getPolicyDiscounts(int dsctPolCode) {
+        List<PolicyDiscountEntity> returnValue = policyDiscountRepository.findAllByDsctPolCode(dsctPolCode);
+        return returnValue;
+    }
+
+    @Override
+    public List<PolicyDiscountEntity> getPolicyDiscountsBySubclassCode(int dsctSclCode) {
+        List<PolicyDiscountEntity> returnValue = policyDiscountRepository.findAllByDsctSclCode(dsctSclCode);
         return returnValue;
     }
 }

@@ -12,4 +12,5 @@ public interface PolicyCommissionService {
     void deleteCommission(int commCode);
     List<PolicyCommissionDto> getCommissions(int page, int limit);
     List<PolicyCommissionEntity> getPolicyCommissions(int commPolCode);
+    List<PolicyCommissionEntity> getPolicyCommissionsBySubclassCode(int commSclCode);
 }

@@ -9,6 +9,7 @@ public class PolicyDiscountDetailsRequestModel {
     private String dsctCalcOn;
     private int dsctPolCode;
     private BigDecimal dsctDefaultValue;
+    private int dsctSclCode;
 
     public String getDsctName() {
         return dsctName;
@@ -48,5 +49,13 @@ public class PolicyDiscountDetailsRequestModel {
 
     public void setDsctDefaultValue(BigDecimal dsctDefaultValue) {
         this.dsctDefaultValue = dsctDefaultValue;
+    }
+
+    public int getDsctSclCode() {
+        return dsctSclCode;
+    }
+
+    public void setDsctSclCode(int dsctSclCode) {
+        this.dsctSclCode = dsctSclCode;
     }
 }

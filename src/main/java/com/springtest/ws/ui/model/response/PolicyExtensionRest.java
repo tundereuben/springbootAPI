@@ -4,6 +4,7 @@ public class PolicyExtensionRest {
     private int extCode;
     private String extName;
     private int extPolCode;
+    private int extSclCode;
 
     public int getExtCode() {
         return extCode;
@@ -27,5 +28,13 @@ public class PolicyExtensionRest {
 
     public void setExtPolCode(int extPolCode) {
         this.extPolCode = extPolCode;
+    }
+
+    public int getExtSclCode() {
+        return extSclCode;
+    }
+
+    public void setExtSclCode(int extSclCode) {
+        this.extSclCode = extSclCode;
     }
 }

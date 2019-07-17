@@ -22,6 +22,8 @@ public class PolicyIdEntity implements Serializable {
     @Column(nullable=false)
     private int idPolCode;
 
+    private int idSclCode;
+
     public int getIdCode() {
         return idCode;
     }
@@ -52,5 +54,13 @@ public class PolicyIdEntity implements Serializable {
 
     public void setIdPolCode(int idPolCode) {
         this.idPolCode = idPolCode;
+    }
+
+    public int getIdSclCode() {
+        return idSclCode;
+    }
+
+    public void setIdSclCode(int idSclCode) {
+        this.idSclCode = idSclCode;
     }
 }

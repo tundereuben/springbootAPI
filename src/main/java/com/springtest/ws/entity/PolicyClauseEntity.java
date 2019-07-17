@@ -19,6 +19,8 @@ public class PolicyClauseEntity implements Serializable {
     @Column(nullable = false)
     private int clsPolCode;
 
+    private int clsSclCode;
+
     public int getClsCode() {
         return clsCode;
     }
@@ -41,5 +43,13 @@ public class PolicyClauseEntity implements Serializable {
 
     public void setClsPolCode(int clsPolCode) {
         this.clsPolCode = clsPolCode;
+    }
+
+    public int getClsSclCode() {
+        return clsSclCode;
+    }
+
+    public void setClsSclCode(int clsSclCode) {
+        this.clsSclCode = clsSclCode;
     }
 }

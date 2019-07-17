@@ -10,4 +10,5 @@ import java.util.List;
 public interface PolicyBenefitRepository extends PagingAndSortingRepository<PolicyBenefitEntity, Long> {
     PolicyBenefitEntity findByBftCode(int bftCode);
     List<PolicyBenefitEntity> findAllByBftPolCode(int bftPolCode);
+    List<PolicyBenefitEntity> findAllByBftSclCode(int bftSclCode);
 }

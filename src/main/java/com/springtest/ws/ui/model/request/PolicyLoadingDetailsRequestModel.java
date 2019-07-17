@@ -9,6 +9,7 @@ public class PolicyLoadingDetailsRequestModel {
     private String loadCalcOn;
     private int loadPolCode;
     private BigDecimal loadDefaultValue;
+    private int loadSclCode;
 
     public String getLoadName() {
         return loadName;
@@ -48,5 +49,13 @@ public class PolicyLoadingDetailsRequestModel {
 
     public void setLoadDefaultValue(BigDecimal loadDefaultValue) {
         this.loadDefaultValue = loadDefaultValue;
+    }
+
+    public int getLoadSclCode() {
+        return loadSclCode;
+    }
+
+    public void setLoadSclCode(int loadSclCode) {
+        this.loadSclCode = loadSclCode;
     }
 }

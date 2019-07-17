@@ -11,6 +11,7 @@ public class PolicyBenefitDto implements Serializable {
     private int bftNo;
     private float bftMultBy;
     private int bftPolCode;
+    private int bftSclCode;
 
     public int getBftCode() {
         return bftCode;
@@ -58,5 +59,13 @@ public class PolicyBenefitDto implements Serializable {
 
     public void setBftPolCode(int bftPolCode) {
         this.bftPolCode = bftPolCode;
+    }
+
+    public int getBftSclCode() {
+        return bftSclCode;
+    }
+
+    public void setBftSclCode(int bftSclCode) {
+        this.bftSclCode = bftSclCode;
     }
 }

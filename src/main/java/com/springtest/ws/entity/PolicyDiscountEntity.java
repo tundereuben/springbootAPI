@@ -17,6 +17,7 @@ public class PolicyDiscountEntity implements Serializable {
     private String dsctCalcOn;
     private int dsctPolCode;
     private BigDecimal dsctDefaultValue;
+    private int dsctSclCode;
 
     public int getDsctCode() {
         return dsctCode;
@@ -64,5 +65,13 @@ public class PolicyDiscountEntity implements Serializable {
 
     public void setDsctDefaultValue(BigDecimal dsctDefaultValue) {
         this.dsctDefaultValue = dsctDefaultValue;
+    }
+
+    public int getDsctSclCode() {
+        return dsctSclCode;
+    }
+
+    public void setDsctSclCode(int dsctSclCode) {
+        this.dsctSclCode = dsctSclCode;
     }
 }

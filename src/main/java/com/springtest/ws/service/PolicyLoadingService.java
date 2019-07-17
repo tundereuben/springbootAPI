@@ -12,4 +12,5 @@ public interface PolicyLoadingService {
     void deleteLoading(int loadCode);
     List<PolicyLoadingDto> getLoadings(int page, int limit);
     List<PolicyLoadingEntity> getPolicyLoadings(int loadPolCode);
+    List<PolicyLoadingEntity> getPolicyLoadingsBySubclassCode(int loadSclCode);
 }

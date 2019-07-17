@@ -92,4 +92,10 @@ public class PolicyLoadingController {
 
         return policyLoadingService.getPolicyLoadings(loadPolCode);
     }
+
+    @GetMapping(path="sclCode")
+    public List<PolicyLoadingEntity> getLoadingsBySubclassCode(@RequestParam(value = "sclCode") final int loadSclCode){
+
+        return policyLoadingService.getPolicyLoadingsBySubclassCode(loadSclCode);
+    }
 }

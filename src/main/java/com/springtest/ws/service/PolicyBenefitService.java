@@ -12,4 +12,6 @@ public interface PolicyBenefitService {
     void deleteBenefit(int bftCode);
     List<PolicyBenefitDto> getBenefits(int page, int limit);
     List<PolicyBenefitEntity> getPolicyBenefits(int bftPolCode);
+    List<PolicyBenefitEntity> getPolicyBenefitsByBftSclCode(int bftSclCode);
+
 }

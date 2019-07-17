@@ -53,6 +53,8 @@ public class PolicyIdServiceImpl implements PolicyIdService {
 
         policyIdEntity.setIdName(id.getIdName());
         policyIdEntity.setIdType(id.getIdType());
+        policyIdEntity.setIdSclCode(id.getIdSclCode());
+        policyIdEntity.setIdPolCode(id.getIdPolCode());
 
         PolicyIdEntity updateIdDetails = policyIdRepository.save(policyIdEntity);
 
@@ -89,6 +91,12 @@ public class PolicyIdServiceImpl implements PolicyIdService {
     @Override
     public List<PolicyIdEntity> getPolicyIds(int idPolCode) {
         List<PolicyIdEntity> returnValue = policyIdRepository.findAllByIdPolCode(idPolCode);
+        return returnValue;
+    }
+
+    @Override
+    public List<PolicyIdEntity> getPolicyIdsBySclCode(int idSclCode) {
+        List<PolicyIdEntity> returnValue = policyIdRepository.findAllByIdSclCode(idSclCode);
         return returnValue;
     }
 }

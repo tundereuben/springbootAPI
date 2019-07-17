@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface PolicyDiscountRepository extends PagingAndSortingRepository<PolicyDiscountEntity, Long> {
     PolicyDiscountEntity findByDsctCode(int dsctCode);
-    List<PolicyDiscountEntity> findAllByDsctPolCode(int idDsctCode);
+    List<PolicyDiscountEntity> findAllByDsctPolCode(int dsctPolCode);
+    List<PolicyDiscountEntity> findAllByDsctSclCode(int dsctSclCode);
 }

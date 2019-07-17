@@ -58,6 +58,7 @@ public class PolicyCommissionServiceImpl implements PolicyCommissionService {
         policyCommissionEntity.setCommCalcOn(commission.getCommCalcOn());
         policyCommissionEntity.setCommPolCode(commission.getCommPolCode());
         policyCommissionEntity.setCommDefaultValue(commission.getCommDefaultValue());
+        policyCommissionEntity.setCommSclCode(commission.getCommSclCode());
 
         PolicyCommissionEntity updateCommDetails = policyCommissionRepository.save(policyCommissionEntity);
 
@@ -94,6 +95,12 @@ public class PolicyCommissionServiceImpl implements PolicyCommissionService {
     @Override
     public List<PolicyCommissionEntity> getPolicyCommissions(int commPolCode) {
         List<PolicyCommissionEntity> returnValue = policyCommissionRepository.findAllByCommPolCode(commPolCode);
+        return returnValue;
+    }
+
+    @Override
+    public List<PolicyCommissionEntity> getPolicyCommissionsBySubclassCode(int commSclCode) {
+        List<PolicyCommissionEntity> returnValue = policyCommissionRepository.findAllByCommSclCode(commSclCode);
         return returnValue;
     }
 }
