@@ -51,11 +51,30 @@ public class ClientServiceImpl implements ClientService {
         ClientDto returnValue = new ClientDto();
         ClientEntity clientEntity = clientRepository.findByClntCode(clntCode);
 
+        clientEntity.setClntTitle(client.getClntTitle());
         clientEntity.setClntEmail(client.getClntEmail());
-        clientEntity.setClntFirstname(client.getClntFirstname());
+        clientEntity.setClntOthernames(client.getClntOthernames());
         clientEntity.setClntLastname(client.getClntLastname());
-        clientEntity.setClntMiddlename(client.getClntMiddlename());
         clientEntity.setClntMobile(client.getClntMobile());
+        clientEntity.setClntCompanyName(client.getClntCompanyName());
+        clientEntity.setClntCountry(client.getClntCountry());
+        clientEntity.setClntDescription(client.getClntDescription());
+        clientEntity.setClntDob(client.getClntDob());
+        clientEntity.setClntEmail(client.getClntEmail());
+        clientEntity.setClntGender(client.getClntGender());
+        clientEntity.setClntLeadDate(client.getClntLeadDate());
+        clientEntity.setClntOccupation(client.getClntOccupation());
+        clientEntity.setClntCity(client.getClntCity());
+        clientEntity.setClntPostalAddress(client.getClntPostalAddress());
+        clientEntity.setClntPostalCode(client.getClntPostalCode());
+        clientEntity.setClntSector(client.getClntSector());
+        clientEntity.setClntSource(client.getClntSource());
+        clientEntity.setClntType(client.getClntType());
+        clientEntity.setClntContactFirstname(client.getClntContactFirstname());
+        clientEntity.setClntContactLastname(client.getClntLastname());
+        clientEntity.setClntContactEmail(client.getClntEmail());
+        clientEntity.setClntContactMobile(client.getClntMobile());
+        clientEntity.setClntContactBirthday(client.getClntContactBirthday());
         
         ClientEntity updateClientDetails = clientRepository.save(clientEntity);
 

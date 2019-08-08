@@ -7,7 +7,7 @@ public class QuotProductRest {
 
     public int qpCode;
     public int qpProCode;
-    public String qpProShtDesc;
+    public String qpName;
     public Date qpWefDate;
     public Date qpWetDate;
     public int qpQuotCode;
@@ -33,12 +33,12 @@ public class QuotProductRest {
         this.qpProCode = qpProCode;
     }
 
-    public String getQpProShtDesc() {
-        return qpProShtDesc;
+    public String getQpName() {
+        return qpName;
     }
 
-    public void setQpProShtDesc(String qpProShtDesc) {
-        this.qpProShtDesc = qpProShtDesc;
+    public void setQpName(String qpName) {
+        this.qpName = qpName;
     }
 
     public Date getQpWefDate() {

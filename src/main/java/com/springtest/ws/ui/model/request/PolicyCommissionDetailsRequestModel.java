@@ -8,6 +8,7 @@ public class PolicyCommissionDetailsRequestModel {
     private String commCalcOn;
     private int commPolCode;
     private BigDecimal commDefaultValue;
+    private BigDecimal commVat;
     private int commSclCode;
 
     public String getCommName() {
@@ -48,6 +49,14 @@ public class PolicyCommissionDetailsRequestModel {
 
     public void setCommDefaultValue(BigDecimal commDefaultValue) {
         this.commDefaultValue = commDefaultValue;
+    }
+
+    public BigDecimal getCommVat() {
+        return commVat;
+    }
+
+    public void setCommVat(BigDecimal commVat) {
+        this.commVat = commVat;
     }
 
     public int getCommSclCode() {

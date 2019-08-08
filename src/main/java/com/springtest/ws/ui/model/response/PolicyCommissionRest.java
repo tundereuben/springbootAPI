@@ -10,6 +10,7 @@ public class PolicyCommissionRest {
     private String commCalcOn;
     private int commPolCode;
     private BigDecimal commDefaultValue;
+    private BigDecimal commVat;
     private int commSclCode;
 
     public int getCommCode() {
@@ -58,6 +59,14 @@ public class PolicyCommissionRest {
 
     public void setCommDefaultValue(BigDecimal commDefaultValue) {
         this.commDefaultValue = commDefaultValue;
+    }
+
+    public BigDecimal getCommVat() {
+        return commVat;
+    }
+
+    public void setCommVat(BigDecimal commVat) {
+        this.commVat = commVat;
     }
 
     public int getCommSclCode() {

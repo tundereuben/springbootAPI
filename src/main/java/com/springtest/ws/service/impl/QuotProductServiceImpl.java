@@ -52,7 +52,7 @@ public class QuotProductServiceImpl implements QuotProductService {
         quotProductEntity.setQpComm(quotProduct.getQpComm());
         quotProductEntity.setQpPremium(quotProduct.getQpPremium());
         quotProductEntity.setQpProCode(quotProduct.getQpProCode());
-        quotProductEntity.setQpProShtDesc(quotProduct.getQpProShtDesc());
+        quotProductEntity.setQpName (quotProduct.getQpName());
 //        quotProductEntity.setQpQuotNo(quotProduct.getQpQuotNo());
 //        quotProductEntity.setQpQuotCode(quotProduct.getQpQuotCode());
         quotProductEntity.setQpTotalSi(quotProduct.getQpTotalSi());
