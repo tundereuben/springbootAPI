@@ -31,11 +31,11 @@ public class UnderwriterEntity implements Serializable{
     private String undCity;
     private String undState;
     private String undCountry;
-    private String undContactFirstname;
-    private String undContactLastname;
-    private String undContactEmail;
-    private String undContactMobile;
-    private String undContactBirthday;
+//    private String undContactFirstname;
+//    private String undContactLastname;
+//    private String undContactEmail;
+//    private String undContactMobile;
+//    private String undContactBirthday;
 
     public long getUndCode() {
         return undCode;
@@ -197,43 +197,43 @@ public class UnderwriterEntity implements Serializable{
         this.undCountry = undCountry;
     }
 
-    public String getUndContactFirstname() {
-        return undContactFirstname;
-    }
-
-    public void setUndContactFirstname(String undContactFirstname) {
-        this.undContactFirstname = undContactFirstname;
-    }
-
-    public String getUndContactLastname() {
-        return undContactLastname;
-    }
-
-    public void setUndContactLastname(String undContactLastname) {
-        this.undContactLastname = undContactLastname;
-    }
-
-    public String getUndContactEmail() {
-        return undContactEmail;
-    }
-
-    public void setUndContactEmail(String undContactEmail) {
-        this.undContactEmail = undContactEmail;
-    }
-
-    public String getUndContactMobile() {
-        return undContactMobile;
-    }
-
-    public void setUndContactMobile(String undContactMobile) {
-        this.undContactMobile = undContactMobile;
-    }
-
-    public String getUndContactBirthday() {
-        return undContactBirthday;
-    }
-
-    public void setUndContactBirthday(String undContactBirthday) {
-        this.undContactBirthday = undContactBirthday;
-    }
+//    public String getUndContactFirstname() {
+//        return undContactFirstname;
+//    }
+//
+//    public void setUndContactFirstname(String undContactFirstname) {
+//        this.undContactFirstname = undContactFirstname;
+//    }
+//
+//    public String getUndContactLastname() {
+//        return undContactLastname;
+//    }
+//
+//    public void setUndContactLastname(String undContactLastname) {
+//        this.undContactLastname = undContactLastname;
+//    }
+//
+//    public String getUndContactEmail() {
+//        return undContactEmail;
+//    }
+//
+//    public void setUndContactEmail(String undContactEmail) {
+//        this.undContactEmail = undContactEmail;
+//    }
+//
+//    public String getUndContactMobile() {
+//        return undContactMobile;
+//    }
+//
+//    public void setUndContactMobile(String undContactMobile) {
+//        this.undContactMobile = undContactMobile;
+//    }
+//
+//    public String getUndContactBirthday() {
+//        return undContactBirthday;
+//    }
+//
+//    public void setUndContactBirthday(String undContactBirthday) {
+//        this.undContactBirthday = undContactBirthday;
+//    }
 }

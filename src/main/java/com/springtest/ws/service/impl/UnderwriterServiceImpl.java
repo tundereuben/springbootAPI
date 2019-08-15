@@ -67,14 +67,16 @@ public class UnderwriterServiceImpl implements UnderwriterService {
         underwriterEntity.setUndCity(underwriter.getUndCity());
         underwriterEntity.setUndPostalAddress(underwriter.getUndPostalAddress());
         underwriterEntity.setUndPostalCode(underwriter.getUndPostalCode());
+        underwriterEntity.setUndCity(underwriter.getUndCity());
+        underwriterEntity.setUndState(underwriter.getUndState());
         underwriterEntity.setUndSector(underwriter.getUndSector());
         underwriterEntity.setUndSource(underwriter.getUndSource());
         underwriterEntity.setUndType(underwriter.getUndType());
-        underwriterEntity.setUndContactFirstname(underwriter.getUndContactFirstname());
-        underwriterEntity.setUndContactLastname(underwriter.getUndLastname());
-        underwriterEntity.setUndContactEmail(underwriter.getUndEmail());
-        underwriterEntity.setUndContactMobile(underwriter.getUndMobile());
-        underwriterEntity.setUndContactBirthday(underwriter.getUndContactBirthday());
+//        underwriterEntity.setUndContactFirstname(underwriter.getUndContactFirstname());
+//        underwriterEntity.setUndContactLastname(underwriter.getUndLastname());
+//        underwriterEntity.setUndContactEmail(underwriter.getUndEmail());
+//        underwriterEntity.setUndContactMobile(underwriter.getUndMobile());
+//        underwriterEntity.setUndContactBirthday(underwriter.getUndContactBirthday());
 
         UnderwriterEntity updateUnderwriterDetails = underwriterRepository.save(underwriterEntity);
 
@@ -94,7 +96,7 @@ public class UnderwriterServiceImpl implements UnderwriterService {
     public List<UnderwriterDto> getUnderwriters(int page, int limit) {
         List<UnderwriterDto> returnValue = new ArrayList<>();
 
-        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("undCode"));
+        Pageable pageableRequest = PageRequest.of(page, limit, Sort.by("undCode").descending());
 
         Page<UnderwriterEntity> underwritersPage = underwriterRepository.findAll(pageableRequest);
         List<UnderwriterEntity> underwriters = underwritersPage.getContent();
