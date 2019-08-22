@@ -1,4 +1,4 @@
-package com.springtest.ws.shared.dto;
+package com.springtest.ws.shared;
 
 import org.springframework.stereotype.Component;
 

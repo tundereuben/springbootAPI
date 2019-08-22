@@ -43,14 +43,6 @@ public class SwaggerConfig {
                     "To be provided"
             );
         }
-
-//        private ApiInfo apiInfo() {
-//        return new ApiInfoBuilder()
-//                .title("Swagger Web Service")
-//                .description("List all APIs for iBroking App")
-//                .version("1.0")
-//                .build();
-//        }
     }
 
 

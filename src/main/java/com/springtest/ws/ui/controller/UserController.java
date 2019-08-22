@@ -3,15 +3,20 @@ package com.springtest.ws.ui.controller;
 import com.springtest.ws.service.UserService;
 import com.springtest.ws.shared.dto.UserDto;
 import com.springtest.ws.ui.model.request.UserDetailsRequestModel;
+import com.springtest.ws.ui.model.request.UserLoginRequestModel;
 import com.springtest.ws.ui.model.response.OperationStatusModel;
 import com.springtest.ws.ui.model.response.RequestOperationName;
 import com.springtest.ws.ui.model.response.RequestOperationStatus;
 import com.springtest.ws.ui.model.response.UserRest;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +39,8 @@ public class UserController {
     }
 
     @PostMapping  (
-            consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
-            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE }
+            consumes = {  MediaType.APPLICATION_JSON_VALUE },
+            produces = {  MediaType.APPLICATION_JSON_VALUE }
     )
     public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails) throws Exception {
         UserRest returnValue = new UserRest();
@@ -80,6 +85,10 @@ public class UserController {
         return returnValue;
     }
 
+    @ApiImplicitParams({
+//            @ApiImplicitParam(name="authorization", value = "${userController.authorizationHeader.description}", paramType = "header")
+            @ApiImplicitParam(name="authorization", value = "Bearer JWT Token", paramType = "header")
+    })
     @GetMapping(produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public List<UserRest> getUsers(@RequestParam(value="page", defaultValue = "0")  int page,
                                    @RequestParam(value="limit", defaultValue = "25")  int limit) {
@@ -94,5 +103,19 @@ public class UserController {
             returnValue.add(userModel);
         }
         return returnValue;
+    }
+
+    @PostMapping(path = "auth/v1/login",
+            produces = {"application/json; charset=UTF-8"})
+    public ResponseEntity<UserRest> authenticate(@RequestBody @Valid UserLoginRequestModel userLoginRequestModel) {
+
+
+        UserRest returnValue = new UserRest();
+        UserDto userDto = new UserDto();
+        BeanUtils.copyProperties(userLoginRequestModel, userDto);
+
+        UserDto loggedInUser = userService.authenticate(userLoginRequestModel);
+        BeanUtils.copyProperties(loggedInUser, returnValue);
+        return ResponseEntity.ok(returnValue);
     }
 }

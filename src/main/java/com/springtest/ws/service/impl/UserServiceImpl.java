@@ -4,9 +4,11 @@ import com.springtest.ws.entity.UserEntity;
 import com.springtest.ws.exceptions.UserServiceException;
 import com.springtest.ws.io.repositories.UserRepository;
 import com.springtest.ws.service.UserService;
+import com.springtest.ws.shared.Utils;
 import com.springtest.ws.shared.dto.UserDto;
-import com.springtest.ws.shared.dto.Utils;
+import com.springtest.ws.ui.model.request.UserLoginRequestModel;
 import com.springtest.ws.ui.model.response.ErrorMessages;
+import io.jsonwebtoken.lang.Assert;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,6 +22,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -129,6 +132,43 @@ public class UserServiceImpl implements UserService {
             BeanUtils.copyProperties(userEntity, userDto);
             returnValue.add(userDto);
         }
+        return returnValue;
+    }
+
+    @Override
+    public UserDto authenticate(UserLoginRequestModel userLoginRequestModel) {
+        Assert.notNull(userLoginRequestModel, "cannot continue with empty credentials.");
+        final String username = userLoginRequestModel.getEmail();
+
+
+// agentauth client
+        final UserEntity userEntity = this.userRepository.findByEmail(username);
+
+        if (userEntity == null)
+            throw new RuntimeException("We could not authenticate. User does not exist.");
+
+// if password is empty ask the user to reset the password
+        if (Objects.isNull(userEntity.getEncryptedPassword())) {
+            userEntity.setEmailVerificationStatus(false);
+            userRepository.save(userEntity);
+
+            throw new RuntimeException("Please reset your password.");
+        }
+
+// check if password matches
+        if (!bCryptPasswordEncoder.matches(userLoginRequestModel.getPassword(), userEntity.getEncryptedPassword())) {
+
+            throw new RuntimeException("We could not authenticate. Wrong password!");
+        }
+
+        UserDto returnValue = new UserDto();
+        BeanUtils.copyProperties(userEntity, returnValue);
+
+
+// set last logged in
+
+        userRepository.save(userEntity);
+
         return returnValue;
     }
 
