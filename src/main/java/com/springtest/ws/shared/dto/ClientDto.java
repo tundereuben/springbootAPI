@@ -25,11 +25,13 @@ public class ClientDto implements Serializable {
     private String clntCity;
     private String clntState;
     private String clntCountry;
-    private String clntContactFirstname;
-    private String clntContactLastname;
-    private String clntContactEmail;
-    private String clntContactMobile;
-    private String clntContactBirthday;
+
+    private String clntNationality;
+    private String clntRcNo;
+    private String clntMaritalStatus;
+    private String clntIdType;
+    private String clntIdNo;
+
 
     public long getClntCode() {
         return clntCode;
@@ -191,43 +193,43 @@ public class ClientDto implements Serializable {
         this.clntCountry = clntCountry;
     }
 
-    public String getClntContactFirstname() {
-        return clntContactFirstname;
+    public String getClntNationality() {
+        return clntNationality;
     }
 
-    public void setClntContactFirstname(String clntContactFirstname) {
-        this.clntContactFirstname = clntContactFirstname;
+    public void setClntNationality(String clntNationality) {
+        this.clntNationality = clntNationality;
     }
 
-    public String getClntContactLastname() {
-        return clntContactLastname;
+    public String getClntRcNo() {
+        return clntRcNo;
     }
 
-    public void setClntContactLastname(String clntContactLastname) {
-        this.clntContactLastname = clntContactLastname;
+    public void setClntRcNo(String clntRcNo) {
+        this.clntRcNo = clntRcNo;
     }
 
-    public String getClntContactEmail() {
-        return clntContactEmail;
+    public String getClntMaritalStatus() {
+        return clntMaritalStatus;
     }
 
-    public void setClntContactEmail(String clntContactEmail) {
-        this.clntContactEmail = clntContactEmail;
+    public void setClntMaritalStatus(String clntMaritalStatus) {
+        this.clntMaritalStatus = clntMaritalStatus;
     }
 
-    public String getClntContactMobile() {
-        return clntContactMobile;
+    public String getClntIdType() {
+        return clntIdType;
     }
 
-    public void setClntContactMobile(String clntContactMobile) {
-        this.clntContactMobile = clntContactMobile;
+    public void setClntIdType(String clntIdType) {
+        this.clntIdType = clntIdType;
     }
 
-    public String getClntContactBirthday() {
-        return clntContactBirthday;
+    public String getClntIdNo() {
+        return clntIdNo;
     }
 
-    public void setClntContactBirthday(String clntContactBirthday) {
-        this.clntContactBirthday = clntContactBirthday;
+    public void setClntIdNo(String clntIdNo) {
+        this.clntIdNo = clntIdNo;
     }
 }

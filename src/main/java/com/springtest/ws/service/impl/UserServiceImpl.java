@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(user, userEntity);
 
         String publicUserId = utils.generateUserId(30);
-        userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode("12345678"));
         userEntity.setUserId(publicUserId);
 
         UserEntity storedUserDetails = userRepository.save(userEntity);
@@ -98,6 +98,17 @@ public class UserServiceImpl implements UserService {
 
         userEntity.setFirstName(user.getFirstName());
         userEntity.setLastName(user.getLastName());
+        userEntity.setCity(user.getCity());
+        userEntity.setCountry(user.getCountry());
+        userEntity.setDob(user.getDob());
+        userEntity.setCity(user.getCity());
+        userEntity.setGender(user.getGender());
+        userEntity.setMobile(user.getMobile());
+        userEntity.setPostalAddress(user.getPostalAddress());
+        userEntity.setPostalCode(user.getPostalCode());
+        userEntity.setState(user.getState());
+        userEntity.setTitle(user.getTitle());
+        userEntity.setType(user.getType());
 
         UserEntity updatedUserDetails = userRepository.save(userEntity);
 

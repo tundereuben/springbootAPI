@@ -70,12 +70,15 @@ public class ClientServiceImpl implements ClientService {
         clientEntity.setClntSector(client.getClntSector());
         clientEntity.setClntSource(client.getClntSource());
         clientEntity.setClntType(client.getClntType());
-        clientEntity.setClntContactFirstname(client.getClntContactFirstname());
-        clientEntity.setClntContactLastname(client.getClntLastname());
-        clientEntity.setClntContactEmail(client.getClntEmail());
-        clientEntity.setClntContactMobile(client.getClntMobile());
-        clientEntity.setClntContactBirthday(client.getClntContactBirthday());
-        
+        clientEntity.setClntType(client.getClntType());
+
+        clientEntity.setClntIdNo(client.getClntIdNo());
+        clientEntity.setClntIdType(client.getClntIdType());
+        clientEntity.setClntMaritalStatus(client.getClntMaritalStatus());
+        clientEntity.setClntNationality(client.getClntNationality());
+        clientEntity.setClntRcNo(client.getClntRcNo());
+
+
         ClientEntity updateClientDetails = clientRepository.save(clientEntity);
 
         BeanUtils.copyProperties(updateClientDetails, returnValue);
@@ -106,6 +109,25 @@ public class ClientServiceImpl implements ClientService {
             returnValue.add(clientDto);
         }
 
+        return returnValue;
+    }
+
+    @Override
+    public List<ClientEntity> getClientsByEmail(String clntEmail) {
+        List<ClientEntity> returnValue = clientRepository.findAllByClntEmail(clntEmail);
+
+        return returnValue;
+    }
+
+    @Override
+    public List<ClientEntity> getClientsByLastname(String clntLastname) {
+        List<ClientEntity> returnValue = clientRepository.findAllByClntLastname(clntLastname);
+        return returnValue;
+    }
+
+    @Override
+    public List<ClientEntity> getClientsByCompanyName(String clntCompanyName) {
+        List<ClientEntity> returnValue = clientRepository.findAllByClntCompanyName(clntCompanyName);
         return returnValue;
     }
 }

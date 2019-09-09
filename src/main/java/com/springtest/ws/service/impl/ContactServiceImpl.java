@@ -72,6 +72,7 @@ public class ContactServiceImpl implements ContactService{
         contactEntity.setContSector(contact.getContSector());
         contactEntity.setContSource(contact.getContSource());
         contactEntity.setContType(contact.getContType());
+        contactEntity.setContNationality(contact.getContNationality());
 
         ContactEntity updateContactDetails = contactRepository.save(contactEntity);
 

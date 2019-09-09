@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.ClientEntity;
 import com.springtest.ws.service.ClientService;
 import com.springtest.ws.shared.dto.ClientDto;
 import com.springtest.ws.ui.model.request.ClientDetailsRequestModel;
@@ -84,5 +85,23 @@ public class ClientController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="clntEmail")
+    public List<ClientEntity> getClientsByEmail(@RequestParam(value="clntEmail") final String clntEmail ) {
+
+        return clientService.getClientsByEmail(clntEmail);
+    }
+
+    @GetMapping(path="clntLastname")
+    public List<ClientEntity> getClientsByLastname(@RequestParam(value="clntLastname") final String clntLastname ) {
+
+        return clientService.getClientsByLastname(clntLastname);
+    }
+
+    @GetMapping(path="clntCompanyName")
+    public List<ClientEntity> getClientsByCompanyName(@RequestParam(value="clntCompanyName") final String clntCompanyName ) {
+
+        return clientService.getClientsByCompanyName(clntCompanyName);
     }
 }

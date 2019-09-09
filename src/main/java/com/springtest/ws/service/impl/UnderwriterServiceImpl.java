@@ -51,32 +51,26 @@ public class UnderwriterServiceImpl implements UnderwriterService {
         UnderwriterDto returnValue = new UnderwriterDto();
         UnderwriterEntity underwriterEntity = underwriterRepository.findByUndCode(undCode);
 
-        underwriterEntity.setUndTitle(underwriter.getUndTitle());
+
         underwriterEntity.setUndEmail(underwriter.getUndEmail());
-        underwriterEntity.setUndOthernames(underwriter.getUndOthernames());
-        underwriterEntity.setUndLastname(underwriter.getUndLastname());
         underwriterEntity.setUndMobile(underwriter.getUndMobile());
         underwriterEntity.setUndCompanyName(underwriter.getUndCompanyName());
         underwriterEntity.setUndCountry(underwriter.getUndCountry());
-        underwriterEntity.setUndDescription(underwriter.getUndDescription());
-        underwriterEntity.setUndDob(underwriter.getUndDob());
         underwriterEntity.setUndEmail(underwriter.getUndEmail());
-        underwriterEntity.setUndGender(underwriter.getUndGender());
-        underwriterEntity.setUndLeadDate(underwriter.getUndLeadDate());
-        underwriterEntity.setUndOccupation(underwriter.getUndOccupation());
         underwriterEntity.setUndCity(underwriter.getUndCity());
         underwriterEntity.setUndPostalAddress(underwriter.getUndPostalAddress());
         underwriterEntity.setUndPostalCode(underwriter.getUndPostalCode());
         underwriterEntity.setUndCity(underwriter.getUndCity());
         underwriterEntity.setUndState(underwriter.getUndState());
-        underwriterEntity.setUndSector(underwriter.getUndSector());
-        underwriterEntity.setUndSource(underwriter.getUndSource());
-        underwriterEntity.setUndType(underwriter.getUndType());
-//        underwriterEntity.setUndContactFirstname(underwriter.getUndContactFirstname());
-//        underwriterEntity.setUndContactLastname(underwriter.getUndLastname());
-//        underwriterEntity.setUndContactEmail(underwriter.getUndEmail());
-//        underwriterEntity.setUndContactMobile(underwriter.getUndMobile());
-//        underwriterEntity.setUndContactBirthday(underwriter.getUndContactBirthday());
+        underwriterEntity.setUndAccountNo(underwriter.getUndAccountNo());
+        underwriterEntity.setUndBankBranch(underwriter.getUndBankBranch());
+        underwriterEntity.setUndBankName(underwriter.getUndBankName());
+        underwriterEntity.setUndPaymentMethod(underwriter.getUndPaymentMethod());
+        underwriterEntity.setUndPencomNo(underwriter.getUndPencomNo());
+        underwriterEntity.setUndSortCode(underwriter.getUndSortCode());
+        underwriterEntity.setUndTaxIdNo(underwriter.getUndTaxIdNo());
+        underwriterEntity.setUndVatNo(underwriter.getUndVatNo());
+        underwriterEntity.setUndWebsite(underwriter.getUndWebsite());
 
         UnderwriterEntity updateUnderwriterDetails = underwriterRepository.save(underwriterEntity);
 

@@ -32,6 +32,7 @@ public class ContactEntity implements Serializable{
     private String contCity;
     private String contState;
     private String contCountry;
+    private String contNationality;
 
     public long getContCode() {
         return contCode;
@@ -199,5 +200,13 @@ public class ContactEntity implements Serializable{
 
     public void setContCountry(String contCountry) {
         this.contCountry = contCountry;
+    }
+
+    public String getContNationality() {
+        return contNationality;
+    }
+
+    public void setContNationality(String contNationality) {
+        this.contNationality = contNationality;
     }
 }
