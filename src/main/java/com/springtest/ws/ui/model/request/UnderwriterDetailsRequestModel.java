@@ -19,6 +19,7 @@ public class UnderwriterDetailsRequestModel {
     private String undBankBranch;
     private String undAccountNo;
     private String undSortCode;
+    private String undRegNo;
 
     public String getUndCompanyName() {
         return undCompanyName;
@@ -154,5 +155,13 @@ public class UnderwriterDetailsRequestModel {
 
     public void setUndSortCode(String undSortCode) {
         this.undSortCode = undSortCode;
+    }
+
+    public String getUndRegNo() {
+        return undRegNo;
+    }
+
+    public void setUndRegNo(String undRegNo) {
+        this.undRegNo = undRegNo;
     }
 }

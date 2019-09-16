@@ -1,5 +1,6 @@
 package com.springtest.ws.service;
 
+import com.springtest.ws.entity.UserEntity;
 import com.springtest.ws.shared.dto.UserDto;
 import com.springtest.ws.ui.model.request.UserLoginRequestModel;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,5 +14,6 @@ public interface UserService extends UserDetailsService {
     UserDto updateUser(String userId, UserDto user);
     void deleteUser(String userId);
     List<UserDto> getUsers(int page, int limit);
+    List<UserEntity> getUsersByLastName(String lastName);
     UserDto authenticate(UserLoginRequestModel userLoginRequestModel);
 }

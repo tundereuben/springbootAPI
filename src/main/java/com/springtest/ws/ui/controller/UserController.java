@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.UserEntity;
 import com.springtest.ws.service.UserService;
 import com.springtest.ws.shared.dto.UserDto;
 import com.springtest.ws.ui.model.request.UserDetailsRequestModel;
@@ -117,5 +118,11 @@ public class UserController {
         UserDto loggedInUser = userService.authenticate(userLoginRequestModel);
         BeanUtils.copyProperties(loggedInUser, returnValue);
         return ResponseEntity.ok(returnValue);
+    }
+
+    @GetMapping(path="userLastName")
+    public List<UserEntity> getUsersByLastName(@RequestParam(value="userLastName") final String userLastName ) {
+
+        return userService.getUsersByLastName(userLastName);
     }
 }

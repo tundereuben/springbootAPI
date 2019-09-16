@@ -147,6 +147,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<UserEntity> getUsersByLastName(String lastName) {
+        List<UserEntity> returnValue = userRepository.findAllByLastName(lastName);
+        return returnValue;
+    }
+
+    @Override
     public UserDto authenticate(UserLoginRequestModel userLoginRequestModel) {
         Assert.notNull(userLoginRequestModel, "cannot continue with empty credentials.");
         final String username = userLoginRequestModel.getEmail();

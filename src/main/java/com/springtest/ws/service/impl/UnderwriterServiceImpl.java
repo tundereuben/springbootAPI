@@ -71,6 +71,7 @@ public class UnderwriterServiceImpl implements UnderwriterService {
         underwriterEntity.setUndTaxIdNo(underwriter.getUndTaxIdNo());
         underwriterEntity.setUndVatNo(underwriter.getUndVatNo());
         underwriterEntity.setUndWebsite(underwriter.getUndWebsite());
+        underwriterEntity.setUndRegNo(underwriter.getUndRegNo());
 
         UnderwriterEntity updateUnderwriterDetails = underwriterRepository.save(underwriterEntity);
 
@@ -101,6 +102,18 @@ public class UnderwriterServiceImpl implements UnderwriterService {
             returnValue.add(underwriterDto);
         }
 
+        return returnValue;
+    }
+
+    @Override
+    public List<UnderwriterEntity> getUnderwritersByEmail(String undEmail) {
+        List<UnderwriterEntity> returnValue = underwriterRepository.findAllByUndEmail(undEmail);
+        return returnValue;
+    }
+
+    @Override
+    public List<UnderwriterEntity> getUnderwritersByName(String undCompanyName) {
+        List<UnderwriterEntity> returnValue = underwriterRepository.findAllByUndCompanyName(undCompanyName);
         return returnValue;
     }
 }

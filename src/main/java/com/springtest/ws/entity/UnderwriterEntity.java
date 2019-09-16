@@ -29,6 +29,7 @@ public class UnderwriterEntity implements Serializable{
     private String undBankBranch;
     private String undAccountNo;
     private String undSortCode;
+    private String undRegNo;
 
     public long getUndCode() {
         return undCode;
@@ -172,5 +173,13 @@ public class UnderwriterEntity implements Serializable{
 
     public void setUndSortCode(String undSortCode) {
         this.undSortCode = undSortCode;
+    }
+
+    public String getUndRegNo() {
+        return undRegNo;
+    }
+
+    public void setUndRegNo(String undRegNo) {
+        this.undRegNo = undRegNo;
     }
 }

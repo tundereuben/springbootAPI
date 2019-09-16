@@ -1,5 +1,6 @@
 package com.springtest.ws.ui.controller;
 
+import com.springtest.ws.entity.UnderwriterEntity;
 import com.springtest.ws.service.UnderwriterService;
 import com.springtest.ws.shared.dto.UnderwriterDto;
 import com.springtest.ws.ui.model.request.UnderwriterDetailsRequestModel;
@@ -84,5 +85,17 @@ public class UnderwriterController {
         }
 
         return returnValue;
+    }
+
+    @GetMapping(path="undEmail")
+    public List<UnderwriterEntity> getUnderwritersByEmail(@RequestParam(value="undEmail") final String undEmail ) {
+
+        return underwriterService.getUnderwritersByEmail(undEmail);
+    }
+
+    @GetMapping(path="undCompanyName")
+    public List<UnderwriterEntity> getUnderwritersName(@RequestParam(value="undCompanyName") final String undCompanyName ) {
+
+        return underwriterService.getUnderwritersByName(undCompanyName);
     }
 }
