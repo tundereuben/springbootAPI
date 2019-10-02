@@ -1,6 +1,9 @@
-package com.springtest.ws.ui.model.response;
+package com.springtest.ws.shared.dto;
 
-public class PolicySubclassRest {
+import java.io.Serializable;
+
+public class PolicyProductDto implements Serializable {
+    private static final long serialVersionUID = 6168141093734660534L;
 
     private int sclCode;
     private String sclName;

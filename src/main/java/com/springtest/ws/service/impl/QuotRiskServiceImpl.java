@@ -61,6 +61,11 @@ public class QuotRiskServiceImpl implements QuotRiskService {
         quotRiskEntity.setQrSclCode(quotRisk.getQrSclCode());
         quotRiskEntity.setQrWefDate(quotRisk.getQrWefDate());
         quotRiskEntity.setQrWetDate(quotRisk.getQrWetDate());
+        quotRiskEntity.setQrInsuredCode(quotRisk.getQrInsuredCode());
+        quotRiskEntity.setQrSumInsured(quotRisk.getQrSumInsured());
+        quotRiskEntity.setQrPremium(quotRisk.getQrPremium());
+        quotRiskEntity.setQrCommRate(quotRisk.getQrCommRate());
+        quotRiskEntity.setQrCommAmount(quotRisk.getQrCommAmount());
 
         QuotRiskEntity updatedQuotRiskDetails = quotRiskRepository.save(quotRiskEntity);
 

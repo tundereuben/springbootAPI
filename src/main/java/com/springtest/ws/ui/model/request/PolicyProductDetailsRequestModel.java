@@ -1,22 +1,12 @@
-package com.springtest.ws.shared.dto;
+package com.springtest.ws.ui.model.request;
 
-import java.io.Serializable;
+public class PolicyProductDetailsRequestModel {
 
-public class PolicySubclassDto implements Serializable {
-    private static final long serialVersionUID = 6168141093734660534L;
-
-    private int sclCode;
+//    private int sclCode;
     private String sclName;
     private int sclPolCode;
 
-    public int getSclCode() {
-        return sclCode;
-    }
-
-    public void setSclCode(int sclCode) {
-        this.sclCode = sclCode;
-    }
-
+   
     public String getSclName() {
         return sclName;
     }

@@ -1,6 +1,7 @@
 package com.springtest.ws.shared.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class QuotRiskDto implements Serializable {
@@ -17,6 +18,12 @@ public class QuotRiskDto implements Serializable {
     public Date qrWefDate;
     public Date qrWetDate;
     public int qrClntCode;
+    public int qrInsuredCode;
+
+    public BigDecimal qrSumInsured;
+    public BigDecimal qrPremium;
+    public BigDecimal qrCommRate;
+    public BigDecimal qrCommAmount;
 
     public int getQrCode() {
         return qrCode;
@@ -104,5 +111,45 @@ public class QuotRiskDto implements Serializable {
 
     public void setQrClntCode(int qrClntCode) {
         this.qrClntCode = qrClntCode;
+    }
+
+    public int getQrInsuredCode() {
+        return qrInsuredCode;
+    }
+
+    public void setQrInsuredCode(int qrInsuredCode) {
+        this.qrInsuredCode = qrInsuredCode;
+    }
+
+    public BigDecimal getQrSumInsured() {
+        return qrSumInsured;
+    }
+
+    public void setQrSumInsured(BigDecimal qrSumInsured) {
+        this.qrSumInsured = qrSumInsured;
+    }
+
+    public BigDecimal getQrPremium() {
+        return qrPremium;
+    }
+
+    public void setQrPremium(BigDecimal qrPremium) {
+        this.qrPremium = qrPremium;
+    }
+
+    public BigDecimal getQrCommRate() {
+        return qrCommRate;
+    }
+
+    public void setQrCommRate(BigDecimal qrCommRate) {
+        this.qrCommRate = qrCommRate;
+    }
+
+    public BigDecimal getQrCommAmount() {
+        return qrCommAmount;
+    }
+
+    public void setQrCommAmount(BigDecimal qrCommAmount) {
+        this.qrCommAmount = qrCommAmount;
     }
 }

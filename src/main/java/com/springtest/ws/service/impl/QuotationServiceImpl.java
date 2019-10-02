@@ -62,6 +62,7 @@ public class QuotationServiceImpl implements QuotationService {
         quotationEntity.setQuotCoverTo(quotation.getQuotCoverTo());
         quotationEntity.setQuotPaymentFrequency(quotation.getQuotPaymentFrequency());
         quotationEntity.setQuotDate(quotation.getQuotDate());
+        quotationEntity.setQuotExpiryDate(quotation.getQuotExpiryDate());
 
 
 

@@ -16,6 +16,9 @@ public class QuotProductRest {
     public BigDecimal qpPremium;
     public BigDecimal qpComm;
 //    public int qpAgntCode;
+    public String qpClauses;
+
+
 
     public int getQpCode() {
         return qpCode;
@@ -104,4 +107,13 @@ public class QuotProductRest {
 //    public void setQpAgntCode(int qpAgntCode) {
 //        this.qpAgntCode = qpAgntCode;
 //    }
+
+
+    public String getQpClauses() {
+        return qpClauses;
+    }
+
+    public void setQpClauses(String qpClauses) {
+        this.qpClauses = qpClauses;
+    }
 }

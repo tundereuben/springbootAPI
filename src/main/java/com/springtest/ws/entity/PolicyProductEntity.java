@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@Entity(name="pol_subclasses")
-public class PolicySubclassEntity implements Serializable {
+@Entity(name="pol_products")
+public class PolicyProductEntity implements Serializable {
     private static final long serialVersionUID = -6009144140580813555L;
     
     @Id

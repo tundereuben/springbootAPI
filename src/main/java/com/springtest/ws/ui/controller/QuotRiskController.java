@@ -79,9 +79,9 @@ public class QuotRiskController {
         List<QuotRiskDto> quotRisks = quotRiskService.getQuotRisks(page, limit);
 
         for(QuotRiskDto quotRiskDto: quotRisks) {
-            QuotRiskRest quorRiskModel = new QuotRiskRest();
-            BeanUtils.copyProperties(quotRiskDto, quorRiskModel);
-            returnValue.add(quorRiskModel);
+            QuotRiskRest quotRiskModel = new QuotRiskRest();
+            BeanUtils.copyProperties(quotRiskDto, quotRiskModel);
+            returnValue.add(quotRiskModel);
         }
         return returnValue;
     }

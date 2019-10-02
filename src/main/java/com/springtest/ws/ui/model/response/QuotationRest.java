@@ -15,6 +15,7 @@ public class QuotationRest {
     public Date quotCoverTo;
     public String quotPaymentFrequency;
     public Date quotDate;
+    public Date quotExpiryDate;
 
     public int getQuotCode() {
         return quotCode;
@@ -102,5 +103,13 @@ public class QuotationRest {
 
     public void setQuotDate(Date quotDate) {
         this.quotDate = quotDate;
+    }
+
+    public Date getQuotExpiryDate() {
+        return quotExpiryDate;
+    }
+
+    public void setQuotExpiryDate(Date quotExpiryDate) {
+        this.quotExpiryDate = quotExpiryDate;
     }
 }

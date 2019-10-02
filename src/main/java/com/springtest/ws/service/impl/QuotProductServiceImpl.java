@@ -59,6 +59,7 @@ public class QuotProductServiceImpl implements QuotProductService {
         quotProductEntity.setQpWefDate(quotProduct.getQpWefDate());
         quotProductEntity.setQpWetDate(quotProduct.getQpWetDate());
 //        quotProductEntity.setQpAgntCode(quotProduct.getQpAgntCode());
+        quotProductEntity.setQpClauses(quotProduct.getQpClauses());
 
         QuotProductEntity updatedQuotProductDetails = quotProductRepository.save(quotProductEntity);
 
